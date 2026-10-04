@@ -152,6 +152,8 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
 .dot25 i{width:22px;height:22px;border-radius:50%;background:var(--blue-soft);display:block}
 .dot25 i.me{background:var(--orange);box-shadow:0 0 0 5px color-mix(in srgb,var(--orange) 25%,transparent)}
 
+.story-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;align-items:start}
+.story-text{display:grid;gap:12px;max-width:68ch}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .gallery .ph{aspect-ratio:4/3;min-height:0}
 
@@ -204,7 +206,7 @@ footer .wrap{padding-block:20px;display:flex;gap:10px 24px;flex-wrap:wrap;justif
 footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
 
 @media (max-width:860px){
-  .hero,.two,.chartrow,.cards,.contact{grid-template-columns:1fr}
+  .hero,.two,.chartrow,.cards,.contact,.story-grid{grid-template-columns:1fr}
   .tiles,.fees{grid-template-columns:1fr 1fr}
   .pay,.gallery{grid-template-columns:1fr 1fr}
 }
@@ -253,6 +255,21 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
       <p class="quote">আমরাই পারি এই তহবিলকে মহীরুহের রূপ দিতে। কে জানে, কাল হয়তো আমার বা আপনার পাশেই দাঁড়াবে এই তহবিল, পরম নির্ভরতা হয়ে।</p>
     </div>
     <div class="ph"><span>ছবি: প্রধান ব্যানার / ক্যাম্পাস</span><span>(প্লেসহোল্ডার, পরে বদলানো হবে)</span></div>
+  </section>
+
+  <section class="story">
+    <div class="eyebrow">আমাদের গল্প</div>
+    <h2>একটি বিকেলের স্বপ্ন থেকে সমিতি</h2>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>বাংলাদেশের আর্থসামাজিক প্রেক্ষাপটে রাষ্ট্রীয় অন্যান্য সকল বিশ্ববিদ্যালয়ের মত চট্টগ্রাম প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়েও প্রধানত মধ্যবিত্ত ও নিম্নবিত্ত পরিবারের সন্তানেরাই উচ্চশিক্ষা গ্রহণে আসেন। প্রাকৃতিক নিয়মেই এই বিদ্যাপীঠের প্রাক্তন ও বর্তমান ছাত্রছাত্রীদের মধ্যে কেউ কেউ এমন অসুস্থতা বা অনাকাঙ্ক্ষিত দুর্ঘটনার শিকার হন, যার চিকিৎসা ব্যয় বহন তাঁর ও তাঁর পরিবারের জন্য অসম্ভব হয়ে পড়ে। তখন সবুজ-শ্যামল এই ক্যাম্পাসের প্রাক্তন ও বর্তমান চুয়েটিয়ানদের কাছেই আশাটা তীব্র হয়ে ওঠে।</p>
+        <p>চুয়েটের সুতীব্র ভ্রাতৃত্ববোধে আমরা বারবার পরস্পরের প্রয়োজনে আর্থিক সহযোগিতায় এগিয়ে এসেছি। তবে অধিকাংশ ক্ষেত্রে দেখা গেছে, সহযোগিতা সংগ্রহের পরিকল্পনা, সংগ্রাহক টিম গঠন আর সুষ্ঠুভাবে পৌঁছে দিতে অনেক অনাকাঙ্ক্ষিত বিলম্ব হয়।</p>
+        <p>এই বিষয়ে করণীয় নির্ধারণে ২০১৬ সালের এক বিকেলে চুয়েটের ১০ম ব্যাচের শ্রদ্ধেয় প্রকৌশলী জনাব মোঃ জসীম উদ্দিন কিছু তরুণ প্রকৌশলীকে ডেকে এক স্বপ্নের কথা জানান: কোনো চুয়েটিয়ান অসুস্থ বা দুর্ঘটনায় পড়ার আগেই তাঁর জন্য একটি নির্ভরযোগ্য তহবিল গড়ে তোলা। একদল তরুণ কর্মী নিয়ে তাঁর অক্লান্ত পরিশ্রমের ফসল চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি। এই সমিতির অর্থায়ন, নিয়ন্ত্রণ ও পরিচালনা করছেন চুয়েটিয়ানরা, সহায়তাও পাবেন চুয়েটিয়ানরাই।</p>
+        <p>আমরা স্বপ্ন দেখি, একদিন হঠাৎ অসুস্থ হয়ে পড়া বা দুর্ঘটনার শিকার কোনো চুয়েটিয়ানকে চিকিৎসা ব্যয়ের জন্য দিশেহারা হতে হবে না। আমরা স্বপ্ন দেখি, আমরা আমাদের জন্যই হয়ে উঠব মানবতা, ভালোবাসা ও ভ্রাতৃত্ববোধের নির্ভরযোগ্য ভ্যানগার্ড।</p>
+        <p class="quote">প্রিয় চুয়েটিয়ান, এই সম্মিলিত যাত্রায় আজীবন সদস্য হয়ে সহযাত্রী হওয়ার জন্য আপনাকে সাদর আমন্ত্রণ। #WEforUS</p>
+      </div>
+      <div class="ph" style="aspect-ratio:3/4"><span>ছবি: চুয়েট ক্যাম্পাস / প্রতিষ্ঠাকালীন সভা</span><span>(প্লেসহোল্ডার)</span></div>
+    </div>
   </section>
 
   <section>
@@ -588,6 +605,9 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
       <div class="card"><h3>ফেসবুক পেজ</h3><p>সহায়তা, নবায়ন ও প্রশ্নের জন্য</p><a href="https://facebook.com/cuetmwa" target="_blank" rel="noopener">facebook.com/cuetmwa</a></div>
       <div class="card"><h3>ফেসবুক গ্রুপ</h3><p>আলোচনার জন্য গ্রুপ যথারীতি থাকছে</p><a href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">facebook.com/groups/cuetmwa</a></div>
       <div class="card"><h3>ওয়েবসাইট</h3><p>সমিতির অফিসিয়াল ওয়েবসাইট</p><a href="https://cuetmwa.org" target="_blank" rel="noopener">cuetmwa.org</a></div>
+      <div class="card"><h3>অফিসের ঠিকানা (অস্থায়ী)</h3><p>২য় তলা, ইআরসি, আইইবি, ঢাকা-১০০০</p><p>2nd Floor, ERC, IEB, Dhaka-1000</p></div>
+      <div class="card"><h3>ফোন</h3><p>অফিসিয়াল যোগাযোগ</p><a href="tel:+8801780354476">+880 1780 354476</a></div>
+      <div class="card"><h3>ইমেইল</h3><p>চিঠিপত্র ও প্রশ্নের জন্য</p><a href="mailto:cuetmaf@gmail.com">cuetmaf@gmail.com</a></div>
     </div>
   </section>
   <section>
@@ -597,7 +617,6 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
       <div class="ph"><span>ছবি: সাধারণ সম্পাদক</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
       <div class="ph"><span>ছবি: কোষাধ্যক্ষ</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
     </div>
-    <p class="note">ফোন ও ইমেইল: <span class="tbd">যোগ করা হবে</span></p>
   </section>
 </div>
 </main>
