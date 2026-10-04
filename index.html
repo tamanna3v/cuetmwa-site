@@ -745,15 +745,12 @@ document.querySelectorAll('.dot25').forEach(g=>{for(let i=0;i<25;i++){const d=do
 
 /* ---------- notices (edit this list to add new ones) ---------- */
 const NOTICES=[
-  {type:'notice',pin:true,date:'অক্টোবর ২০২৬',title:'বার্ষিক সদস্যদের নবায়নের আহ্বান',img:'নবায়ন ক্যাম্পেইন',body:'৩৯৬ জন বার্ষিক সদস্যের ২০২৬ সালের অংশগ্রহণ ফি তালিকায় পরিশোধিত দেখাচ্ছে না। আগেই দিয়ে থাকলে নবায়ন ফর্মে জানান; না দিয়ে থাকলে এখনই নবায়ন করুন।',go:'renew',goText:'নবায়ন করুন'},
-  {type:'update',date:'জুন ২০২৬',title:'সদস্য ও অনুদানের প্রকৃত চিত্র প্রকাশ',img:'রিপোর্ট প্রচ্ছদ',body:'১,২৬৩ জন সদস্য, ৮৬৬ জন আজীবন সদস্য, ৩৪টি চিকিৎসা অনুদান, মোট ২০.২৬ লাখ টাকা বিতরণ। সদস্য আসা কমছে, অনুদানের চাপ বাড়ছে।',go:'stats',goText:'পুরো চিত্র দেখুন'},
-  {type:'notice',date:'অক্টোবর ২০২৬',title:'তথ্য হালনাগাদ অভিযান: রক্তের গ্রুপ, ফোন ও ইমেইল',img:'রক্তদাতা তালিকা',body:'৫৮৭ জন সদস্যের রক্তের গ্রুপ তালিকায় নেই। হালনাগাদ হলে নিজেদের মধ্যেই জরুরি রক্তদাতার তালিকা তৈরি করা যাবে। নবায়ন ফর্মে আপনার তথ্য দিন।',go:'renew',goText:'তথ্য দিন'},
-  {type:'update',date:'২০২৬',title:'ফেসবুক পেজ আবার সক্রিয়',img:'ফেসবুক পেজ',body:'গ্রুপে সহায়তা দেওয়া ও আলোচনা কঠিন, তাই পেজটি আবার সক্রিয় করা হয়েছে। অন্তত একবার মেসেঞ্জারে "হ্যালো" লিখে নক দিন। আলোচনার গ্রুপ যথারীতি থাকছে।',go:'contact',goText:'যোগাযোগ'},
-  {type:'notice',date:'আলোচনাধীন',title:'আলোচনার জন্য পাঁচটি প্রস্তাব',img:'সাধারণ সভা',body:'বার্ষিক সদস্যদের আজীবনে রূপান্তরের সুযোগ, নতুন ব্যাচে প্রচার, লিখিত অনুদান নীতিমালা, তহবিলের স্বচ্ছতা এবং তথ্য হালনাগাদ। মতামত দিন ফেসবুক গ্রুপে।',go:'stats',goText:'প্রস্তাবগুলো পড়ুন'}
 ];
 function renderNotices(f){
   const el=$('noticeList');el.innerHTML='';
-  NOTICES.filter(n=>f==='all'||n.type===f).forEach(n=>{
+  const list=NOTICES.filter(n=>f==='all'||n.type===f);
+  if(!list.length){el.innerHTML='<p style="color:var(--muted)">এই মুহূর্তে কোনো নোটিশ বা আপডেট নেই।</p>';return}
+  list.forEach(n=>{
     const a=document.createElement('article');a.className='notice';
     a.innerHTML='<div class="ph"><span>ছবি: '+n.img+'</span></div><div style="display:grid;gap:6px;min-width:0">'+
       '<div class="meta">'+(n.pin?'<span class="tag pin">গুরুত্বপূর্ণ</span>':'')+'<span class="tag '+n.type+'-t">'+(n.type==='notice'?'নোটিশ':'আপডেট')+'</span><span>'+n.date+'</span></div>'+
