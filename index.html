@@ -210,6 +210,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-of
 .post-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:.92rem}
 .linkbtn{appearance:none;border:0;background:none;color:var(--blue);font:600 .92rem var(--body);cursor:pointer;padding:0;text-decoration:underline}
 @media (max-width:700px){.post{grid-template-columns:1fr}}
+.grant-list{display:grid;gap:10px;margin-top:24px}
+tfoot th{border-top:2px solid var(--line);border-bottom:0}
 
 .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .contact .card a{font-weight:700;word-break:break-all}
@@ -525,6 +527,50 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
     <h2>সমিতি যাঁদের পাশে দাঁড়িয়েছে</h2>
     <p class="lede">সমিতির চিকিৎসা সহায়তার খবর ও আবেদন। রোগীর পরিবারের সম্মানে নাম প্রকাশ করা হয় না। পূর্ণ আলোচনা ও হালনাগাদ খবর সমিতির ফেসবুক গ্রুপে।</p>
     <div class="posts" id="postList"></div>
+    <div class="grant-list">
+      <h3>অনুদানের পূর্ণ তালিকা (২০১৮ থেকে জুন ২০২৬)</h3>
+      <p class="note">সমিতির অনুদান রেজিস্টার থেকে। সম্মানের খাতিরে আবেদনকারীর নাম ও সদস্য নম্বর দেওয়া হলো না।</p>
+      <div class="tbl"><table>
+        <thead><tr><th class="r">ক্রম</th><th>তারিখ</th><th>যার চিকিৎসা</th><th class="r">অনুমোদিত অঙ্ক</th></tr></thead>
+        <tbody>
+          <tr><td class="r">১</td><td>২১ মার্চ ২০১৮</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">২</td><td>২৪ মার্চ ২০১৮</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ২৫,০০০</td></tr>
+          <tr><td class="r">৩</td><td>৭ জুন ২০১৮</td><td>স্ত্রীর চিকিৎসা</td><td class="r">৳ ২৫,০০০</td></tr>
+          <tr><td class="r">৪</td><td>১৫ আগস্ট ২০১৮</td><td>নিজের চিকিৎসা</td><td class="r">৳ ১৫,৭৫০</td></tr>
+          <tr><td class="r">৫</td><td>৩ সেপ্টেম্বর ২০১৮</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৬</td><td>১০ জানুয়ারি ২০১৯</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৭</td><td>১৫ মে ২০১৯</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৮</td><td>২০ জুন ২০১৯</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৯</td><td>৬ সেপ্টেম্বর ২০২০</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১০</td><td>৬ অক্টোবর ২০২০</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৭৫,০০০</td></tr>
+          <tr><td class="r">১১</td><td>২ নভেম্বর ২০২০</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১২</td><td>১৫ ফেব্রুয়ারি ২০২১</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৪০,০০০</td></tr>
+          <tr><td class="r">১৩</td><td>২২ সেপ্টেম্বর ২০২১</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১৪</td><td>৮ মে ২০২২</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৬০,০০০</td></tr>
+          <tr><td class="r">১৫</td><td>২৭ মার্চ ২০২৩</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১৬</td><td>১৫ মে ২০২৩</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১৭</td><td>২১ আগস্ট ২০২৩</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৬০,০০০</td></tr>
+          <tr><td class="r">১৮</td><td>২০ অক্টোবর ২০২৩</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">১৯</td><td>৩০ জানুয়ারি ২০২৪</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">২০</td><td>২০ ফেব্রুয়ারি ২০২৪</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ১,০০,০০০</td></tr>
+          <tr><td class="r">২১</td><td>৬ মার্চ ২০২৪</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">২২</td><td>১২ মার্চ ২০২৪</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৪০,০০০</td></tr>
+          <tr><td class="r">২৩</td><td>২৪ মার্চ ২০২৪</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৭৫,০০০</td></tr>
+          <tr><td class="r">২৪</td><td>২৩ মে ২০২৪</td><td>নিজের চিকিৎসা</td><td class="r">৳ ১,০০,০০০</td></tr>
+          <tr><td class="r">২৫</td><td>৮ সেপ্টেম্বর ২০২৪</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৬০,০০০</td></tr>
+          <tr><td class="r">২৬</td><td>১৭ অক্টোবর ২০২৪</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ৭৫,০০০</td></tr>
+          <tr><td class="r">২৭</td><td>২০ মার্চ ২০২৫</td><td>মায়ের চিকিৎসা</td><td class="r">৳ ২৫,০০০</td></tr>
+          <tr><td class="r">২৮</td><td>জুলাই ২০২৫</td><td>নিজের চিকিৎসা</td><td class="r">৳ ১,৫০,০০০</td></tr>
+          <tr><td class="r">২৯</td><td>আগস্ট ২০২৫</td><td>নিজ ও স্ত্রীর চিকিৎসা</td><td class="r">৳ ১,০০,০০০</td></tr>
+          <tr><td class="r">৩০</td><td>ডিসেম্বর ২০২৫</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৩১</td><td>মার্চ ২০২৬</td><td>নিজের চিকিৎসা</td><td class="r">৳ ১,৫০,০০০</td></tr>
+          <tr><td class="r">৩২</td><td>মার্চ ২০২৬</td><td>বাবার চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৩৩</td><td>মার্চ ২০২৬</td><td>সন্তানের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+          <tr><td class="r">৩৪</td><td>জুন ২০২৬</td><td>নিজের চিকিৎসা</td><td class="r">৳ ৫০,০০০</td></tr>
+        </tbody>
+        <tfoot><tr><th></th><th>মোট ৩৪টি অনুদান</th><th></th><th class="r">৳ ২০,২৫,৭৫০</th></tr></tfoot>
+      </table></div>
+    </div>
   </section>
 </div>
 
@@ -745,6 +791,7 @@ document.querySelectorAll('.dot25').forEach(g=>{for(let i=0;i<25;i++){const d=do
 
 /* ---------- notices (edit this list to add new ones) ---------- */
 const NOTICES=[
+  {type:'notice',pin:true,date:'২৫ জুলাই ২০১৮',title:'সমিতির গঠনতন্ত্র (Rules & Regulations)',img:'গঠনতন্ত্র',body:'চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতির গঠনতন্ত্র ২৫ জুলাই ২০১৮ তারিখে গৃহীত হয় (নিবন্ধন নং ঢ-০৯৫৭১, সমাজসেবা অধিদফতর)। মূল বিষয়: সমিতির স্লোগান #WEforUS; উপদেষ্টা পরিষদ, নির্বাহী কমিটি, কাউন্সিল কমিটি ও সাধারণ পরিষদ নিয়ে চার স্তরের কাঠামো; নির্বাহী কমিটির মেয়াদ তিন বছর। চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থী এবং চুয়েটের বর্তমান শিক্ষার্থীরা সদস্য হতে পারবেন। নিবন্ধিত সদস্য নিজের, অথবা বাবা-মা, স্বামী/স্ত্রী ও সন্তানের চিকিৎসার জন্য অনুদানের আবেদন করতে পারবেন; আবেদনের সঙ্গে সদস্য নম্বর, ডাক্তারের সনদ ও সম্ভাব্য ব্যয়ের প্রাক্কলন দিতে হবে। একই ব্যক্তিকে দ্বিতীয়বার অনুদান দিতে নির্বাহী কমিটির দুই-তৃতীয়াংশ সদস্যের অনুমোদন লাগবে, এবং অনুদান শুধু বাংলাদেশি টাকায় দেওয়া হবে। পূর্ণ গঠনতন্ত্র পেতে সমিতির সঙ্গে যোগাযোগ করুন বা ফেসবুক গ্রুপের ফাইল সেকশন দেখুন।',go:'contact',goText:'যোগাযোগ'}
 ];
 function renderNotices(f){
   const el=$('noticeList');el.innerHTML='';
@@ -792,7 +839,12 @@ const POSTS=[
    body:['সুপ্রিয় চুয়েটিয়ান, একজন আজীবন সদস্যকে তাঁর আবেদনের প্রেক্ষিতে নিজের চিকিৎসার জন্য অনুদান হিসেবে ১,৫০,০০০ টাকা, এবং আরেকজন আজীবন সদস্যের আবেদনের প্রেক্ষিতে তাঁর পিতার চিকিৎসার জন্য ৫০,০০০ টাকা দেওয়ার সিদ্ধান্ত নেওয়া হয়েছে।',
          'চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতির নির্বাহী কমিটির অনলাইন আলোচনায় এই সিদ্ধান্ত গৃহীত হয়।',
          'CUET Medical Welfare Association-এর আজীবন সদস্য হোন, বিপদাপন্ন চুয়েটিয়ানের পাশে থাকুন, চিরদিনের জন্য। #WEforUS'],
-   link:'https://www.facebook.com/groups/cuetmwa/posts/4335194256740973/'}
+   link:'https://www.facebook.com/groups/cuetmwa/posts/4335194256740973/'},
+  {date:'১২ জুন ২০২৫',tag:'চিকিৎসা সহায়তা',amount:'৳ ১,৫০,০০০',
+   title:'অসুস্থ এক আজীবন সদস্যকে চিকিৎসা অনুদান',
+   body:['অসুস্থতাজনিত কারণে একজন আজীবন সদস্যকে তাঁর আবেদনের প্রেক্ষিতে চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি থেকে ১,৫০,০০০ (এক লক্ষ পঞ্চাশ হাজার) টাকা চিকিৎসা অনুদান দেওয়া হয়েছে।',
+         'আসুন, সমিতির আজীবন সদস্য হই, বিপদাপন্ন চুয়েটিয়ানদের পাশে থাকি। #WEforUS'],
+   link:'https://www.facebook.com/groups/cuetmwa/posts/4066084980318570/'}
 ];
 (function(){
   const el=$('postList');
