@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+</head>
+<body style="margin:0">
+<title>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: deep-green masthead + tab bar, then one tab panel at a time on a pale sage ground; colors carried over from the association's June 2026 deck */
+:root{
+  --bg:#edf3ee; --surface:#f8faf8; --line:#d5e0d8;
+  --ink:#123a32; --text:#2c3d38; --muted:#5d6f69;
+  --deep:#123a32; --deep-2:#1d4a41; --on-deep:#eef5f1; --on-deep-muted:#b9cdc5;
+  --orange:#e07a3a; --orange-ink:#b9531f; --orange-soft:#f3a674;
+  --blue:#2e6e94; --blue-soft:#82a8bf; --sand:#b9b0a3;
+  --ph-a:#dfe8e2; --ph-b:#d3dfd7;
+  --display:"Baloo Da 2","Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
+  --body:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1f1b; --surface:#142a25; --line:#25423b;
+  --ink:#e6f1ec; --text:#cfdcd6; --muted:#93a9a1;
+  --deep:#0a1a16; --deep-2:#173530; --on-deep:#eef5f1; --on-deep-muted:#a9c0b7;
+  --orange:#ec8a4b; --orange-ink:#f19a62; --orange-soft:#f3a674;
+  --blue:#5a9cc4; --blue-soft:#6f93aa; --sand:#8c857b;
+  --ph-a:#1a322c; --ph-b:#203b34; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1f1b; --surface:#142a25; --line:#25423b;
+  --ink:#e6f1ec; --text:#cfdcd6; --muted:#93a9a1;
+  --deep:#0a1a16; --deep-2:#173530; --on-deep:#eef5f1; --on-deep-muted:#a9c0b7;
+  --orange:#ec8a4b; --orange-ink:#f19a62; --orange-soft:#f3a674;
+  --blue:#5a9cc4; --blue-soft:#6f93aa; --sand:#8c857b;
+  --ph-a:#1a322c; --ph-b:#203b34; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.2;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+a{color:var(--blue)}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+.mast{background:var(--deep);color:var(--on-deep);border-left:8px solid var(--orange)}
+.mast .wrap{display:flex;gap:18px;align-items:center;padding-block:22px}
+.logo{width:72px;height:72px;border-radius:14px;background:#fff;overflow:hidden;flex:none}
+.logo img{width:100%;height:100%;display:block}
+.mast h1{color:var(--on-deep);font-size:clamp(1.3rem,3.4vw,1.9rem)}
+.mast .en{color:var(--orange-soft);font-weight:600;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase}
+.mast .reg{color:var(--on-deep-muted);font-size:.85rem}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--deep-2);border-left:8px solid var(--orange)}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tab{appearance:none;border:0;background:none;color:var(--on-deep-muted);font:600 1rem var(--body);padding:12px 14px;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent}
+.tab:hover{color:var(--on-deep)}
+.tab[aria-selected="true"]{color:var(--on-deep);border-bottom-color:var(--orange)}
+.tab:focus-visible{outline:2px solid var(--orange-soft);outline-offset:-2px}
+
+main{padding-block:32px 64px}
+.panel{display:grid;gap:44px}
+section{display:grid;gap:16px;min-width:0}
+.eyebrow{color:var(--orange-ink);font-weight:600;font-size:.85rem}
+.lede{color:var(--muted);max-width:65ch}
+.note{font-size:.85rem;color:var(--muted)}
+
+/* photo placeholders */
+.ph{position:relative;border-radius:12px;background:repeating-linear-gradient(135deg,var(--ph-a) 0 14px,var(--ph-b) 14px 28px);border:1.5px dashed var(--blue-soft);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;color:var(--muted);font-size:.85rem;text-align:center;padding:12px;min-height:120px;max-width:100%}
+.ph::before{content:"";width:34px;height:26px;border:2px solid currentColor;border-radius:5px;display:block;margin:0 auto 6px;opacity:.6}
+.ph span{display:block}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.hero h2{font-size:clamp(1.9rem,4.6vw,3rem)}
+.hero .ph{aspect-ratio:4/3}
+.quote{font-family:var(--display);font-weight:700;color:var(--orange-ink);font-size:1.25rem;line-height:1.45}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:2px;align-content:start}
+.tile b{font-family:var(--display);font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.05;color:var(--ink)}
+.tile .t{font-weight:700;color:var(--ink)}
+.tile small{color:var(--muted);font-size:.85rem}
+.tile.dark{background:var(--deep);border-color:var(--deep)}
+.tile.dark b{color:var(--orange-soft)} .tile.dark .t{color:var(--on-deep)} .tile.dark small{color:var(--on-deep-muted)}
+.c-blue{color:var(--blue)!important}.c-orange{color:var(--orange-ink)!important}
+
+.callout{background:var(--deep);color:var(--on-deep);border-radius:14px;padding:20px 22px;display:grid;gap:6px;align-content:start}
+.callout b.big{font-family:var(--display);font-size:2.6rem;color:var(--orange-soft);line-height:1}
+.callout p{color:var(--on-deep)} .callout small{color:var(--on-deep-muted)}
+.soft{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chartrow{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,1fr);gap:20px;align-items:center}
+
+/* vertical bars */
+.vbars{display:flex;align-items:flex-end;gap:8px;height:230px;border-bottom:1px solid var(--line);padding-top:24px}
+.vb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;min-width:0}
+.vb i{display:block;width:100%;max-width:52px;border-radius:5px 5px 0 0;background:var(--blue)}
+.vb i.o{background:var(--orange)} .vb i.l{background:var(--blue-soft)}
+.vb em{font-style:normal;font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:3px}
+.vlabels{display:flex;gap:8px}
+.vlabels span{flex:1;text-align:center;font-size:.78rem;color:var(--muted);line-height:1.35;min-width:0}
+
+/* horizontal bars */
+.hbars{display:grid;gap:8px}
+.hb{display:grid;grid-template-columns:5.5rem 1fr;gap:10px;align-items:center;font-size:.9rem}
+.hb .tr{display:flex;align-items:center;gap:8px}
+.hb i{height:20px;border-radius:4px;background:var(--orange);display:block;min-width:3px}
+.hb b{font-size:.85rem;color:var(--ink)}
+
+.split{display:flex;border-radius:10px;overflow:hidden;font-weight:700;font-size:.95rem}
+.split div{padding:10px;text-align:center}
+.split .a{background:var(--blue);color:#fff}.split .b{background:var(--orange);color:#22150c}
+
+/* donut legend */
+.donutrow{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center}
+.donut{width:200px;height:200px;border-radius:50%;position:relative;max-width:100%}
+.donut::after{content:"";position:absolute;inset:26%;border-radius:50%;background:var(--bg)}
+.donut .c{position:absolute;inset:0;display:grid;place-items:center;z-index:1;font-family:var(--display);font-weight:700;color:var(--ink);text-align:center;line-height:1.2}
+.legend{display:grid;gap:8px}
+.lg{display:grid;grid-template-columns:16px 1fr auto;gap:10px;align-items:center}
+.lg s{width:16px;height:16px;border-radius:4px;display:block}
+.lg .v{font-weight:700;color:var(--ink)}
+.lg small{grid-column:2/4;color:var(--muted);font-size:.82rem;margin-top:-6px}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:.95rem}
+th,td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left}
+th{background:var(--ph-a);color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px;align-content:start}
+.card h3{font-size:1.05rem}
+.card p{font-size:.95rem;color:var(--muted)}
+
+.list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.list li{display:grid;grid-template-columns:2rem 1fr;gap:8px}
+.list li b.n{font-family:var(--display);font-size:1.4rem;color:var(--orange-ink);line-height:1.3}
+.list strong{color:var(--ink)}
+
+.dot25{display:grid;grid-template-columns:repeat(5,22px);gap:8px}
+.dot25 i{width:22px;height:22px;border-radius:50%;background:var(--blue-soft);display:block}
+.dot25 i.me{background:var(--orange);box-shadow:0 0 0 5px color-mix(in srgb,var(--orange) 25%,transparent)}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery .ph{aspect-ratio:4/3;min-height:0}
+
+/* renew */
+.fees{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.fee{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:2px}
+.fee b{font-family:var(--display);font-size:1.7rem;color:var(--ink)}
+.fee .k{font-weight:700;color:var(--ink)} .fee small{color:var(--muted)}
+.fee.hl{border:2px solid var(--orange)}
+.steps{counter-reset:s;display:grid;gap:12px;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.4rem 1fr;gap:10px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;background:var(--deep);color:var(--orange-soft);width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center}
+.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pay .card .ph{min-height:90px}
+.tbd{display:inline-block;background:var(--ph-a);border:1px dashed var(--blue-soft);color:var(--muted);border-radius:6px;padding:0 8px;font-size:.88rem}
+
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:4px;font-weight:600;color:var(--ink);font-size:.95rem;min-width:0}
+input,select,textarea{font:inherit;font-weight:400;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0}
+.btn{appearance:none;border:0;background:var(--orange);color:#1f1209;font:700 1rem var(--body);padding:11px 20px;border-radius:10px;cursor:pointer;justify-self:start}
+.btn.ghost{background:transparent;border:1.5px solid var(--blue);color:var(--blue)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.out{display:grid;gap:10px;background:var(--deep);color:var(--on-deep);border-radius:12px;padding:16px}
+.out pre{white-space:pre-wrap;margin:0;font-family:var(--body);font-size:.95rem;color:var(--on-deep);user-select:all}
+.out .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.out a{color:var(--orange-soft)}
+
+/* notices */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--text);font:600 .9rem var(--body);padding:5px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--deep);color:var(--on-deep);border-color:var(--deep)}
+.notices{display:grid;gap:14px}
+.notice{display:grid;grid-template-columns:180px 1fr;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;align-items:start}
+.notice .ph{aspect-ratio:4/3;min-height:0}
+.notice .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--muted)}
+.tag{font-weight:700;border-radius:999px;padding:1px 10px;font-size:.78rem}
+.tag.notice-t{background:var(--orange);color:#1f1209}
+.tag.update-t{background:var(--blue);color:#fff}
+.tag.pin{background:var(--deep);color:var(--orange-soft)}
+.notice h3{margin:4px 0}
+.notice p{color:var(--text);font-size:.95rem}
+
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.contact .card a{font-weight:700;word-break:break-all}
+
+footer{background:var(--deep);color:var(--on-deep-muted);font-size:.85rem}
+footer .wrap{padding-block:20px;display:flex;gap:10px 24px;flex-wrap:wrap;justify-content:space-between}
+footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
+
+@media (max-width:860px){
+  .hero,.two,.chartrow,.cards,.contact{grid-template-columns:1fr}
+  .tiles,.fees{grid-template-columns:1fr 1fr}
+  .pay,.gallery{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .fgrid,.pay{grid-template-columns:1fr}
+  .notice{grid-template-columns:1fr}
+  .donutrow{grid-template-columns:1fr;justify-items:start}
+  .vbars{gap:4px}.vlabels{gap:4px}.vlabels span{font-size:.68rem}.vb em{font-size:.7rem}
+  .mast .wrap{gap:12px}.logo{width:56px;height:56px}
+}
+@media (prefers-reduced-motion:no-preference){.panel{animation:fade .25s ease}@keyframes fade{from{opacity:.4}to{opacity:1}}}
+</style>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="logo"><img src="data:image/webp;base64,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" alt="সমিতির লোগো"></div>
+    <div>
+      <h1>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি</h1>
+      <div class="en">CUET Medical Welfare Association</div>
+      <div class="reg">নিবন্ধন নং: DA:09571/18 · সকল চুয়েটিয়ানের জন্য, চুয়েটিয়ানদের অর্থায়নে গঠিত ও চুয়েটিয়ান দ্বারা পরিচালিত</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="পাতার বিভাগ">
+  <div class="wrap" role="tablist">
+    <button class="tab" role="tab" id="t-home" data-tab="home" aria-controls="home">আমাদের কথা</button>
+    <button class="tab" role="tab" id="t-stats" data-tab="stats" aria-controls="stats">সদস্য ও অনুদান</button>
+    <button class="tab" role="tab" id="t-renew" data-tab="renew" aria-controls="renew">সদস্যপদ নবায়ন</button>
+    <button class="tab" role="tab" id="t-notice" data-tab="notice" aria-controls="notice">নোটিশ ও আপডেট</button>
+    <button class="tab" role="tab" id="t-contact" data-tab="contact" aria-controls="contact">যোগাযোগ</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ HOME ============ -->
+<div class="panel" id="home" role="tabpanel" aria-labelledby="t-home">
+  <section class="hero">
+    <div style="display:grid;gap:14px">
+      <div class="eyebrow">কেন এই সমিতি</div>
+      <h2>আজ তিনি, কাল হয়তো আমি</h2>
+      <p>বাংলাদেশের অন্যতম প্রকৌশল শিক্ষা প্রতিষ্ঠান চুয়েট। এর সংখ্যাগরিষ্ঠ শিক্ষার্থী আসে বাংলাদেশের সমাজব্যবস্থার প্রতিনিধিত্বকারী মধ্যবিত্ত পরিবার থেকে, যারা সবুজ-শ্যামল এই ক্যাম্পাসে গড়ে তোলে আরও একটি পরিবার।</p>
+      <p>প্রকৌশল শিক্ষার ব্যস্ততা আর ক্যাম্পাস জীবনের বর্ণিলতাকে ম্লান করে দিয়ে প্রকৃতি এখানেও প্রায়ই চাপিয়ে দেয় মারাত্মক ব্যাধি, দুর্ঘটনাসহ নানা অনাকাঙ্ক্ষিত ঘটনা, যার ব্যয় নির্বাহে মধ্যবিত্ত পরিবারগুলো হিমশিম খায়। আগে দেখা গেছে, চুয়েট পরিবারের বর্তমান ও সাবেক ছাত্ররা রাত-দিন খেটে অর্থের সংস্থান করেছে। কিন্তু স্বল্প সময়ে এটা অত্যন্ত কঠিন ও অনিশ্চিত।</p>
+      <p>সমিতির উদ্দেশ্য সমস্যা সৃষ্টির আগেই প্রস্তুত থাকা। অসুস্থতা বা দুর্ঘটনা আমরা বন্ধ করতে পারি না, কিন্তু তা মোকাবেলায় একধাপ এগিয়ে থাকতে পারি; এর জন্য প্রয়োজন শুধু আমাদের সদিচ্ছা।</p>
+      <p class="quote">আমরাই পারি এই তহবিলকে মহীরুহের রূপ দিতে। কে জানে, কাল হয়তো আমার বা আপনার পাশেই দাঁড়াবে এই তহবিল, পরম নির্ভরতা হয়ে।</p>
+    </div>
+    <div class="ph"><span>ছবি: প্রধান ব্যানার / ক্যাম্পাস</span><span>(প্লেসহোল্ডার, পরে বদলানো হবে)</span></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">এক নজরে · জুন ২০২৬ পর্যন্ত</div>
+    <div class="tiles">
+      <div class="tile"><b class="num">১,২৬৩</b><span class="t">মোট সদস্য</span><small>২০১৬ থেকে নিবন্ধিত সব সদস্য</small></div>
+      <div class="tile"><b class="num c-blue">৮৬৬</b><span class="t">আজীবন সদস্য</span><small>মোট সদস্যের ৬৯%</small></div>
+      <div class="tile"><b class="num c-orange">৩৪</b><span class="t">চিকিৎসা অনুদান</span><small>২০১৮ থেকে জুন ২০২৬</small></div>
+      <div class="tile dark"><b class="num">২০.২৬</b><span class="t">লাখ টাকা</span><small>মোট অনুদান বিতরণ</small></div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="soft" style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center">
+      <div class="dot25" aria-hidden="true"></div>
+      <div style="display:grid;gap:6px">
+        <h3>প্রতি ২৫ জনের একটি সুরক্ষা-বৃত্ত</h3>
+        <p>২৪ জনের অংশগ্রহণ থেকে অর্জিত <strong>মুনাফা</strong> দাঁড়ায় <strong class="c-orange">১ জনের</strong> পাশে। অংশগ্রহণের মূল টাকা কখনো সরাসরি অনুদানে দেওয়া হয় না।</p>
+        <p class="note">এখন পর্যন্ত ৮৬৬ জন আজীবন সদস্যের মধ্যে ৩৪ জন অনুদান পেয়েছেন (৩.৯%)। গড় অনুদান প্রায় ৫৯,৬০০ টাকা।</p>
+      </div>
+    </div>
+    <div class="soft" style="display:grid;gap:10px">
+      <h3>সদস্য বাড়লে প্রতিজনের অনুদান বাড়ে</h3>
+      <p class="note">প্রতি অনুদান সর্বোচ্চ কত হতে পারে (অনুমিত)</p>
+      <div class="hbars" id="growBars"></div>
+      <p class="note">অনুমিত: আজীবন ফি ১১,০০০ টাকা, মূলধনে হাত না দিয়ে প্রায় ৯% মুনাফা, বছরে ৮টি অনুদান (মূল পরিকল্পনার হিসাব)।</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">মূল পরিকল্পনা</div>
+    <h2>যে স্বপ্নে শুরু, আর আজ আমরা কোথায়</h2>
+    <div class="chartrow">
+      <div class="tbl"><table>
+        <thead><tr><th>বিষয়</th><th class="r">পরিকল্পনা</th><th class="r">জুন ২০২৬</th></tr></thead>
+        <tbody>
+          <tr><td>আজীবন সদস্য</td><td class="r">৪,০০০</td><td class="r">৮৬৬</td></tr>
+          <tr><td>বছরে তহবিলের মুনাফা</td><td class="r">৪০ লাখ+</td><td class="r">আনুমানিক ৬–৮ লাখ*</td></tr>
+          <tr><td>প্রতিটি সহায়তা</td><td class="r">৫ লাখ পর্যন্ত</td><td class="r">গড় ৭৩,৪০০</td></tr>
+          <tr><td>বছরে সহায়তাপ্রাপ্ত</td><td class="r">৮ জন</td><td class="r">৪–৮ জন</td></tr>
+          <tr><td>নীতি</td><td class="r">মূলধনে হাত নয়</td><td class="r">ঝুঁকিতে</td></tr>
+        </tbody></table></div>
+      <div class="callout"><b class="big">২২%</b><p>আজীবন সদস্যের লক্ষ্যের মাত্র এতটুকু পূরণ হয়েছে</p><small>১০,০০০+ পাশ করা প্রকৌশলীর মধ্যে সদস্য ১৩%-এরও কম</small></div>
+    </div>
+    <p class="note">আগের হিসাবে প্রতি বছর ৬–১২ জন একান্ত নিরুপায় হয়ে সহায়তা চান। ২০২৪ সালে অনুদান গেছে ৫.৫ লাখ, যা আজকের জমার আনুমানিক মুনাফার কাছাকাছি বা বেশি। *মুনাফার অঙ্ক অনুমিত (প্রায় ৯% হারে); প্রকৃত আয় চূড়ান্ত খসড়ায় যুক্ত করা হবে।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">একজন আজীবন সদস্যের আহ্বান</div>
+    <h2>আশা বলি আর ভরসাই বলি, তা আমরাই</h2>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div class="card"><h3>নীতিমালা কেন জরুরি</h3><p>সদস্য না হলে সমিতি থেকে অনুদান পাওয়া যায় না। নীতিমালা ভেঙে তহবিলের বড় অংশ একজনকে দিলে তাঁর প্রয়োজনও মেটে না, তহবিলও মুখ থুবড়ে পড়ে।</p></div>
+      <div class="card"><h3>একমাত্র সমাধান</h3><p>প্রতিটি জরুরি ঘটনার জন্য আলাদা তহবিল সংগ্রহ, আর সাথে সাথে সমিতির তহবিলকে বড় করা, যাতে ভবিষ্যতে কাউকে চিকিৎসার টাকার চিন্তায় নির্ঘুম রাত কাটাতে না হয়।</p></div>
+      <div class="card"><h3>সাড়া দিন</h3><p>সদস্য হওয়ার আমন্ত্রণ অনেকের ফোনে ও ইনবক্সে পড়ে আছে। তার ১০%ও সাড়া দিলে তহবিল কোটির পথে এক ধাপ এগিয়ে যাবে।</p></div>
+    </div>
+    <p>যাঁরা প্রতিবার জরুরি প্রয়োজনে রাত-দিন খেটেছেন, তাঁরা সবাই এই সমিতিরই একনিষ্ঠ কর্মী। হাতে গোনা কয়েকজনের ওপর ভর করে এভাবে কতদিন চলবে? <strong class="c-orange">WE for US</strong></p>
+    <p class="note">একজন আজীবন সদস্যের ব্যক্তিগত মতামত থেকে সংক্ষেপিত; ব্যক্তির নাম বাদ দেওয়া হয়েছে।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">ছবিতে সমিতি</div>
+    <div class="gallery">
+      <div class="ph"><span>ছবি: সাধারণ সভা</span></div>
+      <div class="ph"><span>ছবি: অনুদান হস্তান্তর</span></div>
+      <div class="ph"><span>ছবি: কার্যনির্বাহী কমিটি</span></div>
+      <div class="ph"><span>ছবি: ব্যাচ প্রতিনিধি সভা</span></div>
+      <div class="ph"><span>ছবি: রক্তদান / স্বেচ্ছাসেবা</span></div>
+      <div class="ph"><span>ছবি: পুনর্মিলনী</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ STATS ============ -->
+<div class="panel" id="stats" role="tabpanel" aria-labelledby="t-stats" hidden>
+  <section>
+    <div class="eyebrow">সদস্য সংখ্যা</div>
+    <h2>২০১৯-এর পর নতুন সদস্য আসা অনেক কমেছে</h2>
+    <div class="chartrow">
+      <div><div class="vbars" id="newMem"></div><div class="vlabels" id="newMemL"></div></div>
+      <div class="callout"><b class="big">৭৫%</b><p>সদস্য যোগ দিয়েছেন প্রথম চার বছরে (২০১৬–২০১৯)</p><small>২০২০ থেকে বছরে গড়ে মাত্র ৫০ জনের মতো নতুন সদস্য</small></div>
+    </div>
+    <p class="note">আবেদনের তারিখ অনুযায়ী নতুন সদস্য। *২০২৬: জানুয়ারি–জুন। একটি এন্ট্রিতে ২০১২ লেখা (সম্ভবত টাইপো), ২০১৬-তে ধরা হয়েছে।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">সদস্যপদের ধরন</div>
+    <h2>বার্ষিক সদস্যদের প্রায় কেউই অংশগ্রহণ ফি হালনাগাদ রাখেননি</h2>
+    <div class="split"><div class="a" style="flex:866">আজীবন ৮৬৬ জন (৬৯%)</div><div class="b" style="flex:397">বার্ষিক ৩৯৭ জন (৩১%)</div></div>
+    <div class="chartrow">
+      <div style="display:grid;gap:10px"><h3>বার্ষিক সদস্যরা শেষবার কোন বছরের অংশগ্রহণ ফি দিয়েছেন</h3><div class="hbars" id="lastPaid"></div></div>
+      <div class="callout"><b class="big">৩৯৬</b><p>জনের ২০২৬ সালের অংশগ্রহণ ফি তালিকায় পরিশোধিত দেখাচ্ছে না</p><small>২৪৮ জন শুধু ২০১৭ সালের অংশগ্রহণ ফি দিয়ে আর নবায়ন করেননি</small></div>
+    </div>
+    <p class="note">যদি নবায়ন হয়ে থাকে কিন্তু তালিকায় তোলা না হয়, তবে সমস্যাটা রেকর্ড রাখার। আপনার নবায়ন বাকি থাকলে <a href="#renew" data-go="renew">সদস্যপদ নবায়ন</a> ট্যাবে যান।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">ব্যাচভিত্তিক সদস্য</div>
+    <h2>সংগঠন দাঁড়িয়ে আছে মাঝের ব্যাচগুলোর ওপর</h2>
+    <div class="chartrow">
+      <div><div class="vbars" id="batch"></div><div class="vlabels" id="batchL"></div></div>
+      <div style="display:grid;gap:12px">
+        <div class="callout"><b class="big">৭৬%</b><p>সদস্য ব্যাচ ৩১–৫০ থেকে</p></div>
+        <div class="soft"><b style="font-family:var(--display);font-size:2.2rem;color:var(--orange-ink)">১৯</b><p>জন মাত্র সাম্প্রতিক ব্যাচ (৫১–৫৪) থেকে, এটাই ভবিষ্যতের ঝুঁকি</p></div>
+      </div>
+    </div>
+    <p class="note">সবচেয়ে বেশি সদস্য: ব্যাচ ৩৭ (৯২), ৩৮ (৯১), ৩৯ (৮২), ৪০ (৭২)। শিক্ষক/অন্যান্য ৩ জন চার্টে নেই।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">ফি ও সংগ্রহ</div>
+    <h2>তালিকায় মোট জমা প্রায় ৮৬.৮ লাখ টাকা</h2>
+    <div class="chartrow">
+      <div class="tbl"><table>
+        <thead><tr><th>পরিশোধিত ফি</th><th class="r">সদস্য সংখ্যা</th><th>যা বোঝায়</th></tr></thead>
+        <tbody>
+          <tr><td>১১,০০০ টাকা</td><td class="r">৬০৬</td><td>আজীবন সদস্যপদ</td></tr>
+          <tr><td>৩,৫০০ টাকা</td><td class="r">২০৬</td><td>নতুন ব্যাচের আজীবন</td></tr>
+          <tr><td>১,০০০ টাকা</td><td class="r">২৯৬</td><td>বার্ষিক অংশগ্রহণ ফি</td></tr>
+          <tr><td>৫০০ টাকা</td><td class="r">৮০</td><td>নতুন ব্যাচের বার্ষিক</td></tr>
+          <tr><td>অন্যান্য অঙ্ক/ফাঁকা</td><td class="r">৭৫</td><td>৩১,০০০, ১২,০০০ ইত্যাদি</td></tr>
+        </tbody></table></div>
+      <div class="callout"><b class="big">৯৫%</b><p>মোট জমার এই অংশ এসেছে আজীবন সদস্যদের কাছ থেকে (প্রায় ৮২.৮ লাখ)</p></div>
+    </div>
+    <p class="note">সতর্কতা: তালিকার "পরিশোধিত" ঘর মূলত সদস্যপদের ফি দেখায়। পরের বছরের বার্ষিক নবায়ন, ব্যাংক মুনাফা বা আলাদা দানের হিসাব এখানে নেই, তাই এটা তহবিলের বর্তমান ব্যালান্স নয়। ৪টি এন্ট্রিতে পরিশোধিত অঙ্ক ফাঁকা।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">অনুদান: বছরভিত্তিক</div>
+    <h2>২০২৪ থেকে অনুদানের চাপ হঠাৎ বেড়েছে</h2>
+    <div class="chartrow">
+      <div><div class="vbars" id="grants"></div><div class="vlabels" id="grantsL"></div></div>
+      <div class="callout"><b class="big">৫৮%</b><p>সব অনুদানের টাকা গেছে শেষ আড়াই বছরে (২০২৪–জুন ২০২৬)</p><small>২০২৬-এর ছয় মাসেই ৩ লাখ, পুরো ২০২৩ সালের চেয়ে বেশি</small></div>
+    </div>
+    <p class="note">বারের ওপরে অঙ্ক লাখ টাকায়; নিচে অনুদানের সংখ্যা। *২০২৬: জানুয়ারি–জুন।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">অনুদান: কার চিকিৎসায়</div>
+    <h2>অর্ধেক অনুদান গেছে বাবা-মায়ের চিকিৎসায়</h2>
+    <div class="donutrow">
+      <div class="donut" id="whoDonut"><div class="c">২০.২৬<br>লাখ</div></div>
+      <div class="legend" id="whoLegend"></div>
+    </div>
+    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div class="card"><p><strong>৫১%</strong> টাকা (১০.৩৫ লাখ) সদস্যের বাবা-মায়ের জন্য। পরিবারের সদস্যদের অনুদান কত দূর দেওয়া হবে, নীতিমালায় সীমা থাকা দরকার।</p></div>
+      <div class="card"><p>সদস্য নিজে রোগী হলে গড় অনুদান বেশি: প্রায় <strong>৬৮,০০০</strong> টাকা, মা-বাবার ক্ষেত্রে প্রায় <strong>৫৪,৫০০</strong>।</p></div>
+      <div class="callout"><p>উদ্যোক্তা ও কার্যনির্বাহী কমিটির সদস্যদের নিজেদের চিকিৎসায় বহুবার অর্থের প্রয়োজন হয়েছে, কিন্তু তাঁরা <strong style="color:var(--orange-soft)">কখনো আবেদন করেননি</strong>।</p></div>
+    </div>
+    <p class="note">"স্ত্রী/সন্তান" = স্ত্রী (১), সন্তান (১), নিজ ও স্ত্রী একসাথে (১)। কমিটি সদস্যদের তথ্য কমিটির নিজস্ব বক্তব্য।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">অনুদান: আকার ও সময়</div>
+    <h2>প্রতিটি অনুদানের অঙ্কও বড় হচ্ছে</h2>
+    <div class="tiles" style="grid-template-columns:repeat(3,1fr)">
+      <div class="tile"><small>২০১৮–২০২০ · ১১টি</small><b class="num c-blue">৪৪,৬০০</b><small>টাকা গড় অনুদান</small></div>
+      <div class="tile"><small>২০২১–২০২৩ · ৭টি</small><b class="num c-blue">৫১,৪০০</b><small>টাকা গড় অনুদান</small></div>
+      <div class="tile dark"><small>২০২৪–জুন ২০২৬ · ১৬টি</small><b class="num">৭৩,৪০০</b><small>টাকা গড় অনুদান (+৬৫%)</small></div>
+    </div>
+    <div class="two">
+      <div><h3>অনুদানের অঙ্কের পরিসর</h3><p>সর্বনিম্ন ১৫,৭৫০ থেকে সর্বোচ্চ ১,৫০,০০০ টাকা। ৩৪টির মধ্যে ১৭টি ঠিক ৫০,০০০; ১ লাখ বা তার বেশি ৫টি, পাঁচটিই ২০২৪ থেকে।</p></div>
+      <div><h3>সদস্যপদ থেকে অনুদান পর্যন্ত সময়</h3><p>মাঝামাঝি হিসাবে ৩ বছর। তবে ৭টি অনুদান গেছে সদস্য হওয়ার বছরে বা পরের বছরেই, অর্থাৎ অসুস্থতার সময় সদস্য হওয়ার প্রবণতা থাকতে পারে।</p></div>
+    </div>
+    <p class="note">সময়ের হিসাব ৩১টি অনুদানের; ৩টির সদস্য নম্বর সদস্য তালিকার সাথে মেলেনি।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">সদস্য বনাম অনুদান</div>
+    <h2>সদস্য আসা কমছে, অনুদানের খরচ বাড়ছে</h2>
+    <div class="two">
+      <div class="soft"><h3 class="c-blue">বছরে গড়ে নতুন সদস্য</h3><div class="vbars" id="perMem" style="height:200px"></div><div class="vlabels" id="perMemL"></div></div>
+      <div class="soft"><h3 class="c-orange">বছরে গড়ে অনুদান</h3><div class="vbars" id="perGrant" style="height:200px"></div><div class="vlabels" id="perGrantL"></div></div>
+    </div>
+    <p class="note">প্রতি পর্বের বছরপ্রতি গড়। নতুন সদস্য ৬ ভাগের ১ ভাগে নেমেছে, অনুদান বেড়েছে প্রায় ৬ গুণ। *২০২৬: জানু–জুন।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">জমা বনাম অনুদান</div>
+    <h2>প্রতি ১০০ টাকা নতুন জমায় অনুদান কত</h2>
+    <div class="chartrow">
+      <div><div class="vbars" id="per100"></div><div class="vlabels" id="per100L"></div></div>
+      <div class="callout"><b class="big">প্রায় ২ গুণ</b><p>২০২৪ থেকে নতুন জমার চেয়ে অনুদান বেশি</p><small>ঘাটতি যাচ্ছে পুরোনো সঞ্চয়ের মুনাফা থেকে</small></div>
+    </div>
+    <p class="note">লাখ টাকায়। ঘোষণা: জমার অঙ্ক অনুমিত (আবেদন-সালের সদস্য ফি); প্রকৃত আয় চূড়ান্ত খসড়ায় যুক্ত করা হবে। *জানু–জুন।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">রক্তের গ্রুপ</div>
+    <h2>প্রায় অর্ধেক সদস্যের রক্তের গ্রুপ জানা নেই</h2>
+    <div class="chartrow">
+      <div class="donutrow">
+        <div class="donut" id="bloodDonut"><div class="c">১,২৬৩<br>সদস্য</div></div>
+        <div class="legend" id="bloodLegend"></div>
+      </div>
+      <div class="callout"><b class="big">৪৬%</b><p>সদস্যের রক্তের গ্রুপ তালিকায় নেই</p><small>হালনাগাদ হলে নিজেদের মধ্যেই জরুরি রক্তদাতার তালিকা তৈরি করা যায়। নবায়ন ফর্মে আপনার রক্তের গ্রুপ দিন।</small></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">তথ্যের মান</div>
+    <h2>রেকর্ডে যে ফাঁকগুলো ঠিক করা দরকার</h2>
+    <div class="cards">
+      <div class="card"><h3>দুই তালিকা মিলছে না</h3><p>সাধারণ তালিকা আগস্ট ২০২৫-এ থেমে আছে; ব্যাচভিত্তিক তালিকায় পরের ৮ জন আছেন, আবার ৫ জন নেই।</p></div>
+      <div class="card"><h3>ক্রমিক নম্বর ফাঁকা</h3><p>১২৫৮–১২৬৫ ও ১২৭০ নম্বর কোনো তালিকাতেই নেই: বাতিল, নাকি তোলা হয়নি?</p></div>
+      <div class="card"><h3>অনুদানে সদস্য নম্বর অমিল</h3><p>৩টি অনুদানের সদস্য নম্বর সদস্য তালিকার সাথে মেলে না; ২০২৬-এর ৪টি অনুদানে চেক নম্বর লেখা নেই।</p></div>
+      <div class="card"><h3>অসম্পূর্ণ তথ্য</h3><p>৪টি এন্ট্রিতে টাকার অঙ্ক ফাঁকা, ৫৮৭ জনের রক্তের গ্রুপ নেই, বার্ষিক নবায়নের হিসাব আলাদা নেই।</p></div>
+    </div>
+    <p class="note">প্রস্তাব: একটিই মাস্টার তালিকা, প্রতি মাসে হালনাগাদ।</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">সামনে কী করা যায়</div>
+    <h2>আলোচনার জন্য পাঁচটি প্রস্তাব</h2>
+    <ol class="list">
+      <li><b class="n">১</b><span><strong>৩৯৬ জন বার্ষিক সদস্যকে ফেরানো:</strong> বকেয়া মওকুফ করে আজীবন সদস্যপদে রূপান্তরের বিশেষ সুযোগ</span></li>
+      <li><b class="n">২</b><span><strong>নতুন ব্যাচে প্রচার:</strong> নতুন ব্যাচ থেকে সদস্য আনার পরিকল্পিত উদ্যোগ</span></li>
+      <li><b class="n">৩</b><span><strong>লিখিত অনুদান নীতিমালা:</strong> সর্বোচ্চ সীমা, পরিবারের কারা যোগ্য, এবং সদস্যপদের ন্যূনতম মেয়াদ</span></li>
+      <li><b class="n">৪</b><span><strong>তহবিলের স্বচ্ছতা:</strong> বর্তমান ব্যালান্স, এফডিআর ও বার্ষিক আয়-ব্যয় সদস্যদের সামনে প্রকাশ</span></li>
+      <li><b class="n">৫</b><span><strong>তথ্য হালনাগাদ অভিযান:</strong> রক্তের গ্রুপ, ফোন ও ইমেইল সংগ্রহ; একটিই মাস্টার তালিকা</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="eyebrow">নতুন সদস্য সংগ্রহ</div>
+    <h2>কোথায় আটকে আছি, কীভাবে এগোনো যায়</h2>
+    <div class="two">
+      <div class="soft" style="display:grid;gap:10px">
+        <h3 class="c-orange">বাধা ও ঝামেলা</h3>
+        <p><strong>যোগদান থেমে গেছে:</strong> ২০১৯-এর পর বছরে গড়ে ৫০ জন, আগে ছিল ২৩৫ জন</p>
+        <p><strong>নবায়নের ফলো-আপ নেই:</strong> ২৪৮ জন একবার অংশগ্রহণ ফি দিয়ে আর ফেরেননি</p>
+        <p><strong>নতুন ব্যাচে পরিচিতি কম:</strong> ব্যাচ ৫১–৫৪ থেকে মাত্র ১৯ জন</p>
+        <p><strong>"দরকার হলে যোগ দেব" প্রবণতা:</strong> ৭টি অনুদান সদস্য হওয়ার বছরে বা পরের বছরেই, এতে তহবিল ঝুঁকিতে পড়ে</p>
+        <p><strong>অস্বচ্ছতা:</strong> তহবিল ও অনুদানের হিসাব সদস্যরা নিয়মিত দেখতে পান না, তাই আস্থা তৈরি হয় না</p>
+      </div>
+      <div class="soft" style="display:grid;gap:10px">
+        <h3 class="c-blue">সম্ভাব্য কৌশল</h3>
+        <p><strong>শেষ বর্ষ ও সমাবর্তনে নিবন্ধন:</strong> ৩,৫০০ টাকা মোবাইল ব্যাংকিংয়ে কিস্তিতে নেওয়ার সুযোগ</p>
+        <p><strong>ব্যাচ-প্রতিনিধি ও লক্ষ্য:</strong> প্রতি ব্যাচে একজন দায়িত্বপ্রাপ্ত, বছরে নির্দিষ্ট সংখ্যার লক্ষ্য</p>
+        <p><strong>"একজন আনুন" ক্যাম্পেইন:</strong> ৮৬৬ আজীবন সদস্য একজন করে আনলেই সদস্য সংখ্যা প্রায় দ্বিগুণ হয়</p>
+        <p><strong>নামহীন প্রভাবের গল্প:</strong> "৩৪ পরিবার, ২০ লাখ টাকা" প্রতি বছর প্রকাশ</p>
+        <p><strong>অপেক্ষাকাল নির্ধারণ:</strong> সদস্য হওয়ার পর নির্দিষ্ট সময় পরে অনুদানের যোগ্যতা, যাতে প্রচার তহবিলের ক্ষতি না করে</p>
+      </div>
+    </div>
+    <p class="note">উৎস: সদস্য তালিকা (ব্যাচভিত্তিক ও সাধারণ, জুন ২০২৬) এবং অনুদান তালিকা।</p>
+  </section>
+</div>
+
+<!-- ============ RENEW ============ -->
+<div class="panel" id="renew" role="tabpanel" aria-labelledby="t-renew" hidden>
+  <section class="hero">
+    <div style="display:grid;gap:12px">
+      <div class="eyebrow">সদস্যপদ নবায়ন</div>
+      <h2>আপনার সুরক্ষা-বৃত্ত সচল রাখুন</h2>
+      <p class="lede">৩৯৬ জন বার্ষিক সদস্যের ২০২৬ সালের অংশগ্রহণ ফি তালিকায় পরিশোধিত দেখাচ্ছে না। আপনি যদি তাঁদের একজন হন, নিচের ধাপগুলো মেনে নবায়ন করুন, অথবা একবারে আজীবন সদস্য হয়ে যান। আগেই নবায়ন করে থাকলে ফর্মটি পূরণ করে জানান, আমরা তালিকা ঠিক করে নেব।</p>
+    </div>
+    <div class="ph" style="aspect-ratio:16/10"><span>ছবি: নবায়ন ক্যাম্পেইন ব্যানার</span><span>(প্লেসহোল্ডার)</span></div>
+  </section>
+
+  <section>
+    <h2>সদস্যপদের ফি</h2>
+    <div class="fees">
+      <div class="fee hl"><span class="k">আজীবন সদস্যপদ</span><b class="num">৳ ১১,০০০</b><small>এককালীন, আর নবায়ন লাগে না</small></div>
+      <div class="fee"><span class="k">নতুন ব্যাচের আজীবন</span><b class="num">৳ ৩,৫০০</b><small>সাম্প্রতিক ব্যাচের জন্য</small></div>
+      <div class="fee"><span class="k">বার্ষিক অংশগ্রহণ ফি</span><b class="num">৳ ১,০০০</b><small>প্রতি বছর নবায়নযোগ্য</small></div>
+      <div class="fee"><span class="k">নতুন ব্যাচের বার্ষিক</span><b class="num">৳ ৫০০</b><small>প্রতি বছর নবায়নযোগ্য</small></div>
+    </div>
+    <div class="soft" style="display:grid;gap:6px">
+      <h3>বার্ষিক থেকে আজীবনে রূপান্তর <span class="tbd">প্রস্তাবিত · কমিটির অনুমোদন সাপেক্ষে</span></h3>
+      <p>বকেয়া বার্ষিক ফি মওকুফ করে আজীবন সদস্যপদে রূপান্তরের বিশেষ সুযোগ আলোচনাধীন। সিদ্ধান্ত হলে <a href="#notice" data-go="notice">নোটিশ ও আপডেট</a> ট্যাবে জানানো হবে। আগ্রহী হলে ফর্মে "আজীবনে রূপান্তর" বেছে নিন।</p>
+    </div>
+    <p class="note">ফি-র অঙ্ক সদস্য তালিকায় পরিশোধিত অঙ্ক থেকে নেওয়া। চূড়ান্ত ফি কাঠামো কমিটি নিশ্চিত করবে।</p>
+  </section>
+
+  <section>
+    <h2>কীভাবে নবায়ন করবেন</h2>
+    <ol class="steps">
+      <li><div><strong>সদস্য নম্বর জেনে নিন।</strong> জানা না থাকলে ফেসবুক পেজের মেসেঞ্জারে নাম ও ব্যাচ লিখে জিজ্ঞেস করুন।</div></li>
+      <li><div><strong>নিচের যেকোনো মাধ্যমে ফি পাঠান।</strong> রেফারেন্সে আপনার সদস্য নম্বর লিখুন।</div></li>
+      <li><div><strong>নবায়ন ফর্ম পূরণ করুন।</strong> লেনদেন নম্বর (TrxID) ও রক্তের গ্রুপসহ।</div></li>
+      <li><div><strong>তৈরি হওয়া বার্তাটি কপি করে পাঠান</strong> ফেসবুক পেজের মেসেঞ্জারে। কমিটি যাচাই করে তালিকা হালনাগাদ করবে।</div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>পেমেন্টের মাধ্যম</h2>
+    <div class="pay">
+      <div class="card"><div class="ph"><span>লোগো: বিকাশ</span></div><h3>বিকাশ</h3><p>নম্বর: <span class="tbd">যোগ করা হবে</span></p><p>ধরন: <span class="tbd">পার্সোনাল / মার্চেন্ট</span></p></div>
+      <div class="card"><div class="ph"><span>লোগো: নগদ / রকেট</span></div><h3>নগদ / রকেট</h3><p>নম্বর: <span class="tbd">যোগ করা হবে</span></p></div>
+      <div class="card"><div class="ph"><span>লোগো: ব্যাংক</span></div><h3>ব্যাংক ট্রান্সফার</h3><p>হিসাবের নাম: <span class="tbd">যোগ করা হবে</span></p><p>হিসাব নম্বর ও শাখা: <span class="tbd">যোগ করা হবে</span></p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>নবায়ন ফর্ম</h2>
+    <form id="renewForm" novalidate>
+      <div class="fgrid">
+        <label for="f-name">পূর্ণ নাম *<input id="f-name" required placeholder="যেমন: মো. রফিকুল ইসলাম"></label>
+        <label for="f-id">সদস্য নম্বর<input id="f-id" inputmode="numeric" placeholder="জানা না থাকলে ফাঁকা রাখুন"></label>
+        <label for="f-batch">ব্যাচ *<input id="f-batch" required inputmode="numeric" placeholder="যেমন: ৩৮"></label>
+        <label for="f-dept">বিভাগ<select id="f-dept"><option value="">বেছে নিন</option><option>সিভিল</option><option>ইইই</option><option>মেকানিক্যাল</option><option>সিএসই</option><option>ইটিই</option><option>পেট্রোলিয়াম অ্যান্ড মাইনিং</option><option>আর্কিটেকচার</option><option>ইউআরপি</option><option>বিএমই</option><option>ওয়াটার রিসোর্সেস</option><option>এমএমই</option><option>অন্যান্য</option></select></label>
+        <label for="f-phone">মোবাইল নম্বর *<input id="f-phone" required inputmode="tel" placeholder="০১XXXXXXXXX"></label>
+        <label for="f-email">ইমেইল<input id="f-email" type="email" placeholder="you@example.com"></label>
+        <label for="f-blood">রক্তের গ্রুপ<select id="f-blood"><option value="">বেছে নিন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option><option>জানা নেই</option></select></label>
+        <label for="f-type">কী করতে চান *<select id="f-type" required><option value="">বেছে নিন</option><option>বার্ষিক নবায়ন (১,০০০ টাকা)</option><option>নতুন ব্যাচের বার্ষিক নবায়ন (৫০০ টাকা)</option><option>আজীবন সদস্যপদ (১১,০০০ টাকা)</option><option>আজীবনে রূপান্তর (প্রস্তাবিত সুযোগ)</option><option>আগেই নবায়ন করেছি, তালিকা ঠিক করুন</option></select></label>
+        <label for="f-method">পেমেন্টের মাধ্যম<select id="f-method"><option value="">বেছে নিন</option><option>বিকাশ</option><option>নগদ</option><option>রকেট</option><option>ব্যাংক ট্রান্সফার</option><option>অন্যান্য</option></select></label>
+        <label for="f-trx">লেনদেন নম্বর (TrxID)<input id="f-trx" placeholder="যেমন: 9JX4K2L8PQ"></label>
+      </div>
+      <label for="f-note">মন্তব্য<textarea id="f-note" rows="2" placeholder="কোন বছরের ফি দিচ্ছেন, বা অন্য কিছু জানাতে চাইলে"></textarea></label>
+      <p class="note" id="formErr" role="alert" hidden></p>
+      <button class="btn" type="submit">নবায়নের বার্তা তৈরি করুন</button>
+      <div class="out" id="out" hidden>
+        <strong>এই বার্তাটি কপি করে ফেসবুক পেজের মেসেঞ্জারে পাঠান</strong>
+        <pre id="outText"></pre>
+        <div class="row">
+          <button class="btn" type="button" id="copyBtn">বার্তা কপি করুন</button>
+          <a href="https://m.me/cuetmwa" target="_blank" rel="noopener">মেসেঞ্জারে খুলুন: m.me/cuetmwa</a>
+          <span id="copyMsg" class="note" style="color:var(--on-deep-muted)"></span>
+        </div>
+      </div>
+    </form>
+    <p class="note">এই ফর্ম কোনো তথ্য নিজে থেকে কোথাও পাঠায় না; বার্তা তৈরি করে দেয়, যা আপনি নিজে পাঠাবেন।</p>
+  </section>
+</div>
+
+<!-- ============ NOTICE ============ -->
+<div class="panel" id="notice" role="tabpanel" aria-labelledby="t-notice" hidden>
+  <section>
+    <div class="eyebrow">নোটিশ ও আপডেট</div>
+    <h2>সমিতির সর্বশেষ খবর</h2>
+    <div class="filters" role="group" aria-label="ধরন অনুযায়ী দেখুন">
+      <button class="chip" data-f="all" aria-pressed="true">সব</button>
+      <button class="chip" data-f="notice" aria-pressed="false">নোটিশ</button>
+      <button class="chip" data-f="update" aria-pressed="false">আপডেট</button>
+    </div>
+    <div class="notices" id="noticeList"></div>
+  </section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="panel" id="contact" role="tabpanel" aria-labelledby="t-contact" hidden>
+  <section>
+    <div class="eyebrow">যোগাযোগ</div>
+    <h2>আমাদের সাথে যুক্ত থাকুন</h2>
+    <p class="lede">গ্রুপে সহায়তা দেওয়া ও আলোচনা কঠিন, তাই ফেসবুক পেজটি আবার সক্রিয় করা হয়েছে। অন্তত একবার মেসেঞ্জারে "হ্যালো" লিখে হলেও নক দিন।</p>
+    <div class="contact">
+      <div class="card"><h3>ফেসবুক পেজ</h3><p>সহায়তা, নবায়ন ও প্রশ্নের জন্য</p><a href="https://facebook.com/cuetmwa" target="_blank" rel="noopener">facebook.com/cuetmwa</a></div>
+      <div class="card"><h3>ফেসবুক গ্রুপ</h3><p>আলোচনার জন্য গ্রুপ যথারীতি থাকছে</p><a href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">facebook.com/groups/cuetmwa</a></div>
+      <div class="card"><h3>ওয়েবসাইট</h3><p>সমিতির অফিসিয়াল ওয়েবসাইট</p><a href="https://cuetmwa.org" target="_blank" rel="noopener">cuetmwa.org</a></div>
+    </div>
+  </section>
+  <section>
+    <h2>কার্যনির্বাহী কমিটি</h2>
+    <div class="gallery">
+      <div class="ph"><span>ছবি: সভাপতি</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
+      <div class="ph"><span>ছবি: সাধারণ সম্পাদক</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
+      <div class="ph"><span>ছবি: কোষাধ্যক্ষ</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
+    </div>
+    <p class="note">ফোন ও ইমেইল: <span class="tbd">যোগ করা হবে</span></p>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap"><b>WE for US</b><span>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি · নিবন্ধন নং DA:09571/18 · তথ্য: জুন ২০২৬ পর্যন্ত</span></div></footer>
+
+<script>
+(function(){
+const BN='০১২৩৪৫৬৭৮৯';
+const bn=s=>String(s).replace(/\d/g,d=>BN[d]);
+const $=id=>document.getElementById(id);
+
+/* ---------- tabs ---------- */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(id,push){
+  if(!$(id)||!$(id).classList.contains('panel'))id='home';
+  tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false'));
+  document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==id);
+  if(push){try{history.replaceState(null,'','#'+id)}catch(e){location.hash=id}}
+  try{localStorage.setItem('mwa-tab',id)}catch(e){}
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{show(t.dataset.tab,true);window.scrollTo({top:0})}));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.go,true);window.scrollTo({top:0})}));
+let start=location.hash.slice(1);
+if(!start){try{start=localStorage.getItem('mwa-tab')||''}catch(e){}}
+show(start||'home');
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+
+/* ---------- charts ---------- */
+function vbars(id,data,max,fmt){
+  const el=$(id),lab=$(id+'L');
+  data.forEach(d=>{
+    const b=document.createElement('div');b.className='vb';
+    b.innerHTML='<em>'+fmt(d.v)+'</em><i class="'+(d.c||'')+'" style="height:'+(d.v/max*100*0.86)+'%"></i>';
+    el.appendChild(b);
+    const s=document.createElement('span');s.innerHTML=d.l;lab.appendChild(s);
+  });
+}
+const id=v=>bn(v);
+vbars('newMem',[[2016,260],[2017,254],[2018,230],[2019,198],[2020,33,'o'],[2021,80,'o'],[2022,76,'o'],[2023,31,'o'],[2024,53,'o'],[2025,42,'o'],['2026*',6,'o']].map(a=>({l:bn(a[0]),v:a[1],c:a[2]})),260,id);
+vbars('batch',[['১–১০',127,'l'],['১১–২০',64,'l'],['২১–৩০',92,'l'],['৩১–৪০',548],['৪১–৫০',410],['৫১–৫৪',19,'o']].map(a=>({l:'ব্যাচ<br>'+a[0],v:a[1],c:a[2]})),548,id);
+vbars('grants',[[2018,1.66,5,'l'],[2019,1.50,3,'l'],[2020,1.75,3,'l'],[2021,0.90,2,'l'],[2022,0.60,1,'l'],[2023,2.10,4,'l'],[2024,5.50,8,'o'],[2025,3.25,4,'o'],['2026*',3.00,4,'o']].map(a=>({l:bn(a[0])+'<br>'+bn(a[2])+'টি',v:a[1],c:a[3]})),5.5,v=>bn(v.toFixed(2)));
+vbars('perMem',[['২০১৬–১৯',236],['২০২০–২৩',55],['২০২৪–২৬*',40]].map(a=>({l:a[0],v:a[1]})),236,v=>bn(v)+' জন');
+vbars('perGrant',[['২০১৬–১৯',0.8],['২০২০–২৩',1.3],['২০২৪–২৬*',4.7]].map(a=>({l:a[0],v:a[1],c:'o'})),4.7,v=>bn(v)+' লাখ');
+vbars('per100',[['২০১৬–১৯<br>জমা ৬২.৯ · অনুদান ৩.২',5,'l'],['২০২০–২৩<br>জমা ১৭.৮ · অনুদান ৫.৪',30,'l'],['২০২৪–২৬*<br>জমা ৬.১ · অনুদান ১১.৮',193,'o']].map(a=>({l:a[0],v:a[1],c:a[2]})),193,v=>bn(v)+' টাকা');
+
+function hbars(id,data,max,color){
+  const el=$(id);
+  data.forEach(d=>{
+    const r=document.createElement('div');r.className='hb';
+    r.innerHTML='<span>'+d.l+'</span><span class="tr"><i style="width:'+Math.max(d.v/max*85,1)+'%;'+(d.c?'background:'+d.c:'')+'"></i><b>'+d.t+'</b></span>';
+    el.appendChild(r);
+  });
+}
+hbars('lastPaid',[['২০১৭',248],['২০১৮',63],['২০১৯',49],['২০২১–২৩',9],['২০২৪',18],['২০২৫',9],['২০২৬',1,'var(--blue)','১ (হালনাগাদ)']].map(a=>({l:a[0],v:a[1],c:a[2],t:a[3]||bn(a[1])})),248);
+hbars('growBars',[['৮৬৬ (আজ)',1.1,'var(--blue-soft)'],['২,০০০',2.5,'var(--blue)'],['৪,০০০ (লক্ষ্য)',5,'var(--orange)']].map(a=>({l:a[0],v:a[1],c:a[2],t:'~'+bn(a[1])+' লাখ'})),5);
+
+function donut(id,legend,data,total){
+  let acc=0;const stops=data.map(d=>{const a=acc/total*360;acc+=d.v;return d.c+' '+a+'deg '+(acc/total*360)+'deg'});
+  $(id).style.background='conic-gradient('+stops.join(',')+')';
+  data.forEach(d=>{
+    const r=document.createElement('div');r.className='lg';
+    r.innerHTML='<s style="background:'+d.c+'"></s><span>'+d.l+'</span><span class="v">'+d.p+'</span>'+(d.s?'<small>'+d.s+'</small>':'');
+    $(legend).appendChild(r);
+  });
+}
+donut('whoDonut','whoLegend',[
+  {l:'নিজের চিকিৎসা',v:8.16,p:'৪০%',s:'৮.১৬ লাখ · ১২টি',c:'var(--blue)'},
+  {l:'মায়ের চিকিৎসা',v:7.25,p:'৩৬%',s:'৭.২৫ লাখ · ১৩টি',c:'var(--orange)'},
+  {l:'বাবার চিকিৎসা',v:3.10,p:'১৫%',s:'৩.১০ লাখ · ৬টি',c:'var(--orange-soft)'},
+  {l:'স্ত্রী/সন্তান',v:1.75,p:'৯%',s:'১.৭৫ লাখ · ৩টি',c:'var(--blue-soft)'}],20.26);
+donut('bloodDonut','bloodLegend',[
+  {l:'অজানা',v:587,p:'৫৮৭ (৪৬%)',c:'var(--sand)'},
+  {l:'B+',v:234,p:'২৩৪',c:'var(--blue)'},
+  {l:'O+',v:214,p:'২১৪',c:'var(--blue-soft)'},
+  {l:'A+',v:161,p:'১৬১',c:'var(--orange)'},
+  {l:'AB+',v:48,p:'৪৮',c:'var(--orange-soft)'},
+  {l:'নেগেটিভ',v:19,p:'১৯',c:'var(--ink)'}],1263);
+
+/* 5x5 dots */
+document.querySelectorAll('.dot25').forEach(g=>{for(let i=0;i<25;i++){const d=document.createElement('i');if(i===12)d.className='me';g.appendChild(d)}});
+
+/* ---------- notices (edit this list to add new ones) ---------- */
+const NOTICES=[
+  {type:'notice',pin:true,date:'অক্টোবর ২০২৬',title:'বার্ষিক সদস্যদের নবায়নের আহ্বান',img:'নবায়ন ক্যাম্পেইন',body:'৩৯৬ জন বার্ষিক সদস্যের ২০২৬ সালের অংশগ্রহণ ফি তালিকায় পরিশোধিত দেখাচ্ছে না। আগেই দিয়ে থাকলে নবায়ন ফর্মে জানান; না দিয়ে থাকলে এখনই নবায়ন করুন।',go:'renew',goText:'নবায়ন করুন'},
+  {type:'update',date:'জুন ২০২৬',title:'সদস্য ও অনুদানের প্রকৃত চিত্র প্রকাশ',img:'রিপোর্ট প্রচ্ছদ',body:'১,২৬৩ জন সদস্য, ৮৬৬ জন আজীবন সদস্য, ৩৪টি চিকিৎসা অনুদান, মোট ২০.২৬ লাখ টাকা বিতরণ। সদস্য আসা কমছে, অনুদানের চাপ বাড়ছে।',go:'stats',goText:'পুরো চিত্র দেখুন'},
+  {type:'notice',date:'অক্টোবর ২০২৬',title:'তথ্য হালনাগাদ অভিযান: রক্তের গ্রুপ, ফোন ও ইমেইল',img:'রক্তদাতা তালিকা',body:'৫৮৭ জন সদস্যের রক্তের গ্রুপ তালিকায় নেই। হালনাগাদ হলে নিজেদের মধ্যেই জরুরি রক্তদাতার তালিকা তৈরি করা যাবে। নবায়ন ফর্মে আপনার তথ্য দিন।',go:'renew',goText:'তথ্য দিন'},
+  {type:'update',date:'২০২৬',title:'ফেসবুক পেজ আবার সক্রিয়',img:'ফেসবুক পেজ',body:'গ্রুপে সহায়তা দেওয়া ও আলোচনা কঠিন, তাই পেজটি আবার সক্রিয় করা হয়েছে। অন্তত একবার মেসেঞ্জারে "হ্যালো" লিখে নক দিন। আলোচনার গ্রুপ যথারীতি থাকছে।',go:'contact',goText:'যোগাযোগ'},
+  {type:'notice',date:'আলোচনাধীন',title:'আলোচনার জন্য পাঁচটি প্রস্তাব',img:'সাধারণ সভা',body:'বার্ষিক সদস্যদের আজীবনে রূপান্তরের সুযোগ, নতুন ব্যাচে প্রচার, লিখিত অনুদান নীতিমালা, তহবিলের স্বচ্ছতা এবং তথ্য হালনাগাদ। মতামত দিন ফেসবুক গ্রুপে।',go:'stats',goText:'প্রস্তাবগুলো পড়ুন'}
+];
+function renderNotices(f){
+  const el=$('noticeList');el.innerHTML='';
+  NOTICES.filter(n=>f==='all'||n.type===f).forEach(n=>{
+    const a=document.createElement('article');a.className='notice';
+    a.innerHTML='<div class="ph"><span>ছবি: '+n.img+'</span></div><div style="display:grid;gap:6px;min-width:0">'+
+      '<div class="meta">'+(n.pin?'<span class="tag pin">গুরুত্বপূর্ণ</span>':'')+'<span class="tag '+n.type+'-t">'+(n.type==='notice'?'নোটিশ':'আপডেট')+'</span><span>'+n.date+'</span></div>'+
+      '<h3>'+n.title+'</h3><p>'+n.body+'</p>'+(n.go?'<a href="#'+n.go+'" data-go2="'+n.go+'">'+n.goText+' →</a>':'')+'</div>';
+    el.appendChild(a);
+  });
+  el.querySelectorAll('[data-go2]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.go2,true);window.scrollTo({top:0})}));
+}
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c?'true':'false'));
+  renderNotices(c.dataset.f);
+}));
+renderNotices('all');
+
+/* ---------- renew form ---------- */
+$('renewForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=k=>$(k).value.trim();
+  const miss=[['f-name','নাম'],['f-batch','ব্যাচ'],['f-phone','মোবাইল নম্বর'],['f-type','কী করতে চান']].filter(([k])=>!v(k)).map(x=>x[1]);
+  const err=$('formErr');
+  if(miss.length){err.hidden=false;err.textContent='এই ঘরগুলো পূরণ করুন: '+miss.join(', ');$('out').hidden=true;return}
+  err.hidden=true;
+  const lines=['সদস্যপদ নবায়ন অনুরোধ','নাম: '+v('f-name'),'সদস্য নম্বর: '+(v('f-id')||'জানা নেই'),'ব্যাচ: '+v('f-batch')+(v('f-dept')?' · '+v('f-dept'):''),'মোবাইল: '+v('f-phone')];
+  if(v('f-email'))lines.push('ইমেইল: '+v('f-email'));
+  if(v('f-blood'))lines.push('রক্তের গ্রুপ: '+v('f-blood'));
+  lines.push('অনুরোধ: '+v('f-type'));
+  if(v('f-method'))lines.push('পেমেন্ট: '+v('f-method')+(v('f-trx')?' · TrxID '+v('f-trx'):''));
+  if(v('f-note'))lines.push('মন্তব্য: '+v('f-note'));
+  $('outText').textContent=lines.join('\n');
+  $('out').hidden=false;$('copyMsg').textContent='';
+});
+$('copyBtn').addEventListener('click',()=>{
+  const t=$('outText').textContent;
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($('outText'));const s=getSelection();s.removeAllRanges();s.addRange(r);$('copyMsg').textContent='বার্তাটি সিলেক্ট করা হয়েছে, নিজে কপি করুন'};
+  try{navigator.clipboard.writeText(t).then(()=>{$('copyMsg').textContent='কপি হয়েছে'},sel)}catch(e){sel()}
+});
+})();
+</script>
+
+</body>
+</html>
