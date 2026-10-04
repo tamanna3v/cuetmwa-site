@@ -199,6 +199,17 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-of
 .tag.pin{background:var(--deep);color:var(--orange-soft)}
 .notice h3{margin:4px 0}
 .notice p{color:var(--text);font-size:.95rem}
+.posts{display:grid;gap:22px}
+.post{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;align-items:start}
+.post .ph{aspect-ratio:4/3;min-height:0}
+.post-body{display:grid;gap:10px;min-width:0}
+.post h3{font-size:1.35rem}
+.post-text{display:grid;gap:10px;max-width:68ch}
+.post-text[data-collapsed="true"] p:nth-child(n+3){display:none}
+.amount{display:inline-block;background:var(--deep);color:var(--orange-soft);font-family:var(--display);font-weight:700;border-radius:999px;padding:2px 14px}
+.post-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:.92rem}
+.linkbtn{appearance:none;border:0;background:none;color:var(--blue);font:600 .92rem var(--body);cursor:pointer;padding:0;text-decoration:underline}
+@media (max-width:700px){.post{grid-template-columns:1fr}}
 
 .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .contact .card a{font-weight:700;word-break:break-all}
@@ -237,6 +248,7 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
   <div class="wrap" role="tablist">
     <button class="tab" role="tab" id="t-home" data-tab="home" aria-controls="home">আমাদের কথা</button>
     <button class="tab" role="tab" id="t-stats" data-tab="stats" aria-controls="stats">সদস্য ও অনুদান</button>
+    <button class="tab" role="tab" id="t-help" data-tab="help" aria-controls="help">সহায়তা</button>
     <button class="tab" role="tab" id="t-renew" data-tab="renew" aria-controls="renew">সদস্যপদ নবায়ন</button>
     <button class="tab" role="tab" id="t-notice" data-tab="notice" aria-controls="notice">নোটিশ ও আপডেট</button>
     <button class="tab" role="tab" id="t-contact" data-tab="contact" aria-controls="contact">যোগাযোগ</button>
@@ -506,6 +518,16 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
   </section>
 </div>
 
+<!-- ============ HELP (blog) ============ -->
+<div class="panel" id="help" role="tabpanel" aria-labelledby="t-help" hidden>
+  <section>
+    <div class="eyebrow">সহায়তা</div>
+    <h2>সমিতি যাঁদের পাশে দাঁড়িয়েছে</h2>
+    <p class="lede">সমিতির চিকিৎসা সহায়তার খবর ও আবেদন। রোগীর পরিবারের সম্মানে নাম প্রকাশ করা হয় না। পূর্ণ আলোচনা ও হালনাগাদ খবর সমিতির ফেসবুক গ্রুপে।</p>
+    <div class="posts" id="postList"></div>
+  </section>
+</div>
+
 <!-- ============ RENEW ============ -->
 <div class="panel" id="renew" role="tabpanel" aria-labelledby="t-renew" hidden>
   <section class="hero">
@@ -745,6 +767,32 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   renderNotices(c.dataset.f);
 }));
 renderNotices('all');
+
+/* ---------- help posts (blog). Add new posts at the top of this list ---------- */
+const POSTS=[
+  {date:'ফেসবুক গ্রুপ থেকে',tag:'চিকিৎসা সহায়তা',amount:'৳ ৩,০০,০০০',img:'সহায়তা সংক্রান্ত ছবি',
+   title:'লাইফ সাপোর্টে থাকা এক আজীবন সদস্যের পাশে সমিতি',
+   body:['সমিতির একজন আজীবন সদস্য মারাত্মক দুর্ঘটনায় পড়ে মধ্যপ্রাচ্যের একটি হাসপাতালে লাইফ সাপোর্টে আছেন। সেখানকার চিকিৎসকরা তাঁকে সিঙ্গাপুর, থাইল্যান্ড বা ভারতে নিয়ে চিকিৎসার পরামর্শ দিয়েছেন। অনুমান করা হচ্ছে, তাঁর চিকিৎসায় প্রায় ২ কোটি টাকা খরচ হবে।',
+         'তিনি সমিতির আজীবন সদস্য হওয়ায় তাঁর পক্ষে স্ত্রীর আবেদনের প্রেক্ষিতে নির্বাহী কমিটির অনলাইন আলোচনার ভিত্তিতে তাঁকে ৩,০০,০০০ (তিন লক্ষ) টাকা চিকিৎসা সহায়তা দেওয়ার সিদ্ধান্ত নেওয়া হয়েছে।',
+         'চুয়েটের প্রতিটি ব্যাচকে তাঁর চিকিৎসার জন্য তহবিল সংগ্রহে এগিয়ে আসার অনুরোধ জানানো হয়েছে। এ বিষয়ে চুয়েটের অধ্যাপক সাদিকুল ইসলাম (সিভিল)-এর সঙ্গে যোগাযোগ করতে বলা হয়েছে।',
+         'আসুন, সকল চুয়েটিয়ান চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতির আজীবন সদস্য হয়ে নিজের ও অন্য চুয়েটিয়ানের পাশে স্থায়ীভাবে দাঁড়াই। #WEforUS'],
+   link:'https://www.facebook.com/groups/cuetmwa/posts/4535938036666593/'}
+];
+(function(){
+  const el=$('postList');
+  POSTS.forEach((p,i)=>{
+    const a=document.createElement('article');a.className='post';
+    a.innerHTML='<div class="ph"><span>ছবি: '+p.img+'</span></div><div class="post-body">'+
+      '<div class="meta" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.82rem;color:var(--muted)"><span class="tag notice-t">'+p.tag+'</span><span>'+p.date+'</span></div>'+
+      '<h3>'+p.title+'</h3>'+(p.amount?'<div><span class="amount">সহায়তা: '+p.amount+'</span></div>':'')+
+      '<div class="post-text" data-collapsed="true">'+p.body.map(t=>'<p>'+t+'</p>').join('')+'</div>'+
+      '<div class="post-actions">'+(p.body.length>2?'<button class="linkbtn" type="button">পুরোটা পড়ুন</button>':'')+
+      (p.link?'<a href="'+p.link+'" target="_blank" rel="noopener">ফেসবুক গ্রুপে মূল পোস্ট →</a>':'')+'</div></div>';
+    el.appendChild(a);
+    const b=a.querySelector('.linkbtn'),tx=a.querySelector('.post-text');
+    if(b)b.addEventListener('click',()=>{const c=tx.dataset.collapsed==='true';tx.dataset.collapsed=c?'false':'true';b.textContent=c?'সংক্ষেপে দেখুন':'পুরোটা পড়ুন';});
+  });
+})();
 
 /* ---------- renew form ---------- */
 $('renewForm').addEventListener('submit',e=>{
