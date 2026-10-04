@@ -199,7 +199,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-of
 .tag.pin{background:var(--deep);color:var(--orange-soft)}
 .notice h3{margin:4px 0}
 .notice p{color:var(--text);font-size:.95rem}
-.posts{display:grid;gap:22px}
+.posts{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));align-items:start}
+.video-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:28px;align-items:center}
+.video-wrap{width:100%;max-width:320px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--deep);justify-self:center}
+.video-wrap iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:700px){.video-grid{grid-template-columns:1fr}}
 .post{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;align-items:start}
 .post .ph{aspect-ratio:4/3;min-height:0}
 .post-body{display:grid;gap:10px;min-width:0}
@@ -285,6 +289,18 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
         <p class="quote">প্রিয় চুয়েটিয়ান, এই সম্মিলিত যাত্রায় আজীবন সদস্য হয়ে সহযাত্রী হওয়ার জন্য আপনাকে সাদর আমন্ত্রণ। #WEforUS</p>
       </div>
       <div class="ph" style="aspect-ratio:3/4"><span>ছবি: চুয়েট ক্যাম্পাস / প্রতিষ্ঠাকালীন সভা</span><span>(প্লেসহোল্ডার)</span></div>
+    </div>
+  </section>
+
+  <section class="video-sec">
+    <div class="video-grid">
+      <div style="display:grid;gap:12px;align-content:center">
+        <div class="eyebrow">ভিডিও</div>
+        <h2>দেখুন, শেয়ার করুন</h2>
+        <p class="lede">সমিতির কাজ ও আহ্বান নিয়ে একটি ছোট ভিডিও। চুয়েটিয়ান বন্ধুদের সাথে শেয়ার করুন, যাতে আরও মানুষ আজীবন সদস্য হয়ে বিপদাপন্ন চুয়েটিয়ানের পাশে দাঁড়ান।</p>
+        <p><a href="https://www.youtube.com/shorts/5aaKg6lhYKc" target="_blank" rel="noopener">YouTube-এ দেখুন →</a></p>
+      </div>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/5aaKg6lhYKc" title="চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি: ভিডিও" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
   </section>
 
