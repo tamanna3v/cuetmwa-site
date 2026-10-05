@@ -56,6 +56,9 @@ a{color:var(--blue)}
 .mast .reg{color:var(--on-deep-muted);font-size:.85rem}
 
 #about{scroll-margin-top:130px}
+#renewForm{scroll-margin-top:130px}
+.formframe{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.formframe iframe{display:block;width:100%;height:1400px;border:0;background:#edf3ee}
 /* tabs */
 .tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--deep-2);border-left:8px solid var(--orange)}
 .tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
@@ -676,8 +679,7 @@ a.btn{text-decoration:none;display:inline-block}
       <h2>সদস্য হোন, সুরক্ষা-বৃত্তে যুক্ত হোন</h2>
       <p class="lede">চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থীরা সদস্য হতে পারেন। নির্ধারিত ফরম অনলাইনে বা হাতে পূরণ করে যে কোনো সময় আবেদন করা যায়।</p>
       <div class="banner-cta" style="margin-top:4px">
-        <a class="btn" href="https://members.cuetmwa.org/" target="_blank" rel="noopener">অনলাইনে আবেদন করুন</a>
-        <a class="btn ghost" href="#renewForm">নবায়নের বার্তা তৈরি করুন</a>
+        <a class="btn" href="#renewForm">আবেদন ফর্ম পূরণ করুন</a>
       </div>
     </div>
     <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:16/10" onerror="this.remove()">
@@ -717,45 +719,12 @@ a.btn{text-decoration:none;display:inline-block}
     </div>
   </section>
 
-  <section>
-    <h2>কীভাবে নবায়ন করবেন</h2>
-    <ol class="steps">
-      <li><div><strong>সদস্য নম্বর জেনে নিন।</strong> জানা না থাকলে ফেসবুক পেজের মেসেঞ্জারে নাম ও ব্যাচ লিখে জিজ্ঞেস করুন।</div></li>
-      <li><div><strong><a href="#donate" data-go="donate">ব্যাংক বা বিকাশে</a> ফি পাঠান।</strong> রেফারেন্সে আপনার সদস্য নম্বর লিখুন।</div></li>
-      <li><div><strong>নিচের ফর্ম পূরণ করুন।</strong> লেনদেন নম্বর (TrxID) ও রক্তের গ্রুপসহ।</div></li>
-      <li><div><strong>তৈরি হওয়া বার্তাটি কপি করে পাঠান</strong> ফেসবুক পেজের মেসেঞ্জারে। কমিটি যাচাই করে তালিকা হালনাগাদ করবে।</div></li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>নবায়ন ফর্ম</h2>
-    <form id="renewForm" novalidate>
-      <div class="fgrid">
-        <label for="f-name">পূর্ণ নাম *<input id="f-name" required placeholder="যেমন: মো. রফিকুল ইসলাম"></label>
-        <label for="f-id">সদস্য নম্বর<input id="f-id" inputmode="numeric" placeholder="জানা না থাকলে ফাঁকা রাখুন"></label>
-        <label for="f-batch">ব্যাচ *<input id="f-batch" required inputmode="numeric" placeholder="যেমন: ৩৮"></label>
-        <label for="f-dept">বিভাগ<select id="f-dept"><option value="">বেছে নিন</option><option>সিভিল</option><option>ইইই</option><option>মেকানিক্যাল</option><option>সিএসই</option><option>ইটিই</option><option>পেট্রোলিয়াম অ্যান্ড মাইনিং</option><option>আর্কিটেকচার</option><option>ইউআরপি</option><option>বিএমই</option><option>ওয়াটার রিসোর্সেস</option><option>এমএমই</option><option>অন্যান্য</option></select></label>
-        <label for="f-phone">মোবাইল নম্বর *<input id="f-phone" required inputmode="tel" placeholder="০১XXXXXXXXX"></label>
-        <label for="f-email">ইমেইল<input id="f-email" type="email" placeholder="you@example.com"></label>
-        <label for="f-blood">রক্তের গ্রুপ<select id="f-blood"><option value="">বেছে নিন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option><option>জানা নেই</option></select></label>
-        <label for="f-type">কী করতে চান *<select id="f-type" required><option value="">বেছে নিন</option><option>বার্ষিক নবায়ন: প্রকৌশলী (১,০০০ টাকা)</option><option>বার্ষিক নবায়ন: শিক্ষার্থী (৫০০ টাকা)</option><option>বার্ষিক নবায়ন: বিদেশে অবস্থানরত (২০ ইউএসডি)</option><option>আজীবন সদস্য: প্রকৌশলী (১১,০০০ টাকা)</option><option>আজীবন সদস্য: শিক্ষার্থী (৩,৫০০ টাকা)</option><option>আজীবন সদস্য: বিদেশে অবস্থানরত (১৫০ ইউএসডি)</option><option>আজীবনে রূপান্তর (প্রস্তাবিত সুযোগ)</option><option>আগেই নবায়ন করেছি, তালিকা ঠিক করুন</option></select></label>
-        <label for="f-method">পেমেন্টের মাধ্যম<select id="f-method"><option value="">বেছে নিন</option><option>বিকাশ</option><option>নগদ</option><option>রকেট</option><option>ব্যাংক ট্রান্সফার</option><option>অন্যান্য</option></select></label>
-        <label for="f-trx">লেনদেন নম্বর (TrxID)<input id="f-trx" placeholder="যেমন: 9JX4K2L8PQ"></label>
-      </div>
-      <label for="f-note">মন্তব্য<textarea id="f-note" rows="2" placeholder="কোন বছরের ফি দিচ্ছেন, বা অন্য কিছু জানাতে চাইলে"></textarea></label>
-      <p class="note" id="formErr" role="alert" hidden></p>
-      <button class="btn" type="submit">নবায়নের বার্তা তৈরি করুন</button>
-      <div class="out" id="out" hidden>
-        <strong>এই বার্তাটি কপি করে ফেসবুক পেজের মেসেঞ্জারে পাঠান</strong>
-        <pre id="outText"></pre>
-        <div class="row">
-          <button class="btn" type="button" id="copyBtn">বার্তা কপি করুন</button>
-          <a href="https://m.me/cuetmwa" target="_blank" rel="noopener">মেসেঞ্জারে খুলুন: m.me/cuetmwa</a>
-          <span id="copyMsg" class="note" style="color:var(--on-deep-muted)"></span>
-        </div>
-      </div>
-    </form>
-    <p class="note">এই ফর্ম কোনো তথ্য নিজে থেকে কোথাও পাঠায় না; বার্তা তৈরি করে দেয়, যা আপনি নিজে পাঠাবেন।</p>
+  <section id="renewForm">
+    <div class="eyebrow">সদস্য ফর্ম</div>
+    <h2>সদস্যপদের আবেদন ফর্ম</h2>
+    <p class="lede">ফর্মটি পূরণ করে ছবি, সনদ/আইডি কার্ড ও ফি জমার রশিদ আপলোড করুন। কমিটি যাচাই করে অনুমোদন দিলে সদস্য নম্বর জানানো হবে।</p>
+    <div class="formframe"><iframe id="memberFrame" src="https://members.cuetmwa.org/?embed=1" title="সদস্যপদের আবেদন ফর্ম" loading="lazy"></iframe></div>
+    <p class="note">ফর্ম দেখা না গেলে <a href="https://members.cuetmwa.org/" target="_blank" rel="noopener">members.cuetmwa.org</a>-এ সরাসরি পূরণ করুন।</p>
   </section>
 
 </div>
@@ -1022,27 +991,12 @@ const POSTS=[
     if(b)b.addEventListener('click',()=>{const k=tx.dataset.collapsed==='true';tx.dataset.collapsed=k?'false':'true';b.textContent=k?'সংক্ষেপে দেখুন':'পুরোটা পড়ুন';});});
 })();
 
-/* ---------- renew form ---------- */
-$('renewForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const v=k=>$(k).value.trim();
-  const miss=[['f-name','নাম'],['f-batch','ব্যাচ'],['f-phone','মোবাইল নম্বর'],['f-type','কী করতে চান']].filter(([k])=>!v(k)).map(x=>x[1]);
-  const err=$('formErr');
-  if(miss.length){err.hidden=false;err.textContent='এই ঘরগুলো পূরণ করুন: '+miss.join(', ');$('out').hidden=true;return}
-  err.hidden=true;
-  const lines=['সদস্যপদ নবায়ন অনুরোধ','নাম: '+v('f-name'),'সদস্য নম্বর: '+(v('f-id')||'জানা নেই'),'ব্যাচ: '+v('f-batch')+(v('f-dept')?' · '+v('f-dept'):''),'মোবাইল: '+v('f-phone')];
-  if(v('f-email'))lines.push('ইমেইল: '+v('f-email'));
-  if(v('f-blood'))lines.push('রক্তের গ্রুপ: '+v('f-blood'));
-  lines.push('অনুরোধ: '+v('f-type'));
-  if(v('f-method'))lines.push('পেমেন্ট: '+v('f-method')+(v('f-trx')?' · TrxID '+v('f-trx'):''));
-  if(v('f-note'))lines.push('মন্তব্য: '+v('f-note'));
-  $('outText').textContent=lines.join('\n');
-  $('out').hidden=false;$('copyMsg').textContent='';
-});
-$('copyBtn').addEventListener('click',()=>{
-  const t=$('outText').textContent;
-  const sel=()=>{const r=document.createRange();r.selectNodeContents($('outText'));const s=getSelection();s.removeAllRanges();s.addRange(r);$('copyMsg').textContent='বার্তাটি সিলেক্ট করা হয়েছে, নিজে কপি করুন'};
-  try{navigator.clipboard.writeText(t).then(()=>{$('copyMsg').textContent='কপি হয়েছে'},sel)}catch(e){sel()}
+/* ---------- member form iframe ---------- */
+window.addEventListener('message',e=>{
+  if(e.origin!=='https://members.cuetmwa.org'||!e.data)return;
+  const f=$('memberFrame');if(!f)return;
+  if(e.data.cmwaHeight)f.style.height=Math.max(400,Math.min(6000,+e.data.cmwaHeight+8))+'px';
+  if(e.data.cmwaScroll)$('renewForm').scrollIntoView({behavior:'smooth',block:'start'});
 });
 })();
 </script>
