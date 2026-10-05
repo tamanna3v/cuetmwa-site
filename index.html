@@ -237,59 +237,153 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
   .mast .wrap{gap:12px}.logo{width:56px;height:56px}
 }
 @media (prefers-reduced-motion:no-preference){.panel{animation:fade .25s ease}@keyframes fade{from{opacity:.4}to{opacity:1}}}
+
+/* ---------- alumni-site layout (v2) ---------- */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--deep);color:var(--on-deep);box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-deep);min-width:0}
+.brand .logo{width:52px;height:52px;border-radius:12px}
+.brand-text{display:grid;line-height:1.25;min-width:0}
+.brand-text b{font-family:var(--display);font-size:1.15rem;color:var(--on-deep)}
+.brand-text small{color:var(--orange-soft);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;font-weight:600}
+.head-cta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn.small{padding:7px 14px;font-size:.92rem;text-decoration:none}
+a.btn{text-decoration:none;display:inline-block}
+.btn.ghost-light{background:transparent;border:1.5px solid var(--on-deep);color:var(--on-deep)}
+.site-head .tabs{position:static;border-left:0;background:var(--deep-2)}
+.banner{position:relative;border-radius:18px;overflow:hidden;background:var(--deep);min-height:420px;display:grid;align-items:end}
+.banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,26,22,.15) 0%,rgba(10,26,22,.85) 75%)}
+.banner-in{position:relative;z-index:1;padding:clamp(22px,4vw,48px);display:grid;gap:14px;max-width:760px;color:#eef5f1}
+.banner h1{color:#fff;font-size:clamp(2rem,5vw,3.4rem);line-height:1.15}
+.banner p{color:#dbe7e1;font-size:1.05rem}
+.eyebrow.light{color:#f3a674}
+.banner-cta{display:flex;gap:10px;flex-wrap:wrap}
+.statband{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-8px}
+.statband .stat{padding:20px 18px;display:grid;gap:2px;border-right:1px solid var(--line)}
+.statband .stat:nth-child(4){border-right:0}
+.statband b{font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--ink);line-height:1.1}
+.statband .stat:nth-child(4) b{color:var(--orange-ink)}
+.statband span{color:var(--muted);font-size:.92rem}
+.statband .note{grid-column:1/-1;padding:8px 18px;border-top:1px solid var(--line)}
+.howgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.how{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;align-content:start}
+.how-n{font-family:var(--display);font-weight:800;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#1f1209}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+.ctaband{background:var(--deep);color:var(--on-deep);border-radius:18px;padding:clamp(22px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.5fr) auto;gap:20px;align-items:center}
+.ctaband h2{color:#fff}
+.ctaband p{color:var(--on-deep-muted)}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tier{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.tier:nth-child(2){border-top-color:var(--orange)}
+.tier b{font-family:var(--display);font-size:1.1rem;color:var(--ink)}
+.tier p{font-size:.92rem;color:var(--muted)}
+.logo-about{display:grid;grid-template-columns:140px minmax(0,1fr);gap:22px;align-items:center}
+.logo-about img{width:140px;height:140px;border-radius:18px;background:#fff;object-fit:cover}
+.btn.ghost{background:transparent;border:1.5px solid var(--blue);color:var(--blue)}
+.faq{display:grid;gap:8px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.faq details p{margin-top:8px;color:var(--text)}
+.site-foot{background:var(--deep);color:var(--on-deep-muted);font-size:.92rem}
+.site-foot .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;padding-block:32px}
+.foot-brand{display:grid;gap:12px;align-content:start}
+.foot-links{display:grid;gap:6px;align-content:start}
+.foot-links b{color:#fff;font-family:var(--display)}
+.foot-links a{color:var(--on-deep-muted)}
+.site-foot .foot-bottom{display:block;border-top:1px solid rgba(255,255,255,.12);padding-block:14px;font-size:.82rem}
+.slogan img{height:72px;width:auto;background:#fff;border-radius:10px;padding:4px;display:block}
+.photo{width:100%;max-width:100%;object-fit:cover;border-radius:14px;display:block}
+.story-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;align-items:start}
+.story-text{display:grid;gap:12px;max-width:68ch}
+@media (max-width:860px){
+  .statband{grid-template-columns:1fr 1fr}.statband .stat:nth-child(2){border-right:0}.statband .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .howgrid,.cards.three,.ctaband,.site-foot .foot-grid,.story-grid{grid-template-columns:1fr}
+  .tiers{grid-template-columns:1fr 1fr}
+  .head-cta .ghost-light{display:none}
+}
+@media (max-width:560px){
+  .brand-text small{display:none}.brand-text b{font-size:.98rem}.brand .logo{width:42px;height:42px}
+  .banner{min-height:480px}.tiers{grid-template-columns:1fr}.logo-about{grid-template-columns:1fr}
+}
 </style>
 
-<header class="mast">
-  <div class="wrap">
-    <div class="logo"><img src="data:image/webp;base64,UklGRhQJAABXRUJQVlA4IAgJAACwLgCdASqQAJAAPp1Am0olo6IhpzK+uLATiWkA0mCbMaA7OP9Ry/UxWmz/feePfrwAvXP+L4HUAX5H/WeI3SuTSPJV9TewR+t3Wu/c72WkR/9HY+BItzKPMMxWIgO92O3BB0UrHTt0hUg7Qsg1ia9/j+Q7NlGPSorPPcep2nguITiRaP2UEai8NTseNYqSD4OoOlL3U61n+tx+9ZB1/RbK3eO/PXGDSnHFtmGkxtzspvnvacd213rwm5Yi7OBxFvp8YHDB4VRvlMFxhf7BEdWJVScAKYbLI/tZPIg6U1CZ/Jo+g/GKD3BLykYVgHchZEvbK5ObtT9TyIoKwT5IiZasdPfiufnVfc6rQh9vdJCTJTBBkqH5a6mYqVhyFvKT0uFFicbX8eDRloc1cjI967pqO9nrqqZ7z7ZpwajV2eEMKxA8v6PxUfMtD22UfZZJPw2a3mLjXaqr69pdViisoCwV3sblj05B1E4shI6E7NNesSQcupDXCVUxfRbeB30AAP7foEIlOOW98yGR3AXCLlF8tcyNnfCrjO0GDK2r1CG9FIwPYWV70QCZrAK0KhLSvSJA2itpBF/LekMBv/kGfjqNuL4FJc5tAoOWYy87wPx4gGgDwlGOhTRiTPqbVBqtDgdlYHySRjbJbUnEQ04ef2SHAbq/kDpHgcnhVSvpfAc0O2W+A1FUZGAduoAQF5poyHxRThFS0Eqtgkb6KNrwcoyUVBnI4AEwu6+5ixI2wp9I2rnM0U4uM59PK3IqjxctvAC42wYvx+to7k1xRBW27xxyg7yo1ANRRgSPK+25iHQTKD/6OY07FTj8EwQIwDsFsg0vLvPHofJl8czqgPkxkQueBPMyzutHlnAQZym7l88YVRlc1Ti/neK89YzBjFAwFOJW3qj3LIrY2bXsTbQwnm9Xo0cacuiYkt0qfc8ZakGoLzkSvLUgAB2igRlfUuqLfzfuK10v6bAi3LAy134qMGpvOgdf5tvhJZMuJkPNvOZfnmAnQF6dLREkSv+LKWpXUpqyH3QjB+40109MsivWkRRD/0ftIlaMYyZyeyh6jXM6N/ZqoCWti6y/QXRsEPsk411HOsle/uDhVxnm57YXl+mZRmTMInPhHO+wJJxiSFFFuQUriM77nj46VpZFOPFNNpOzpjHNCVzgDO06NNx/pQB4zBVfK2qm+ofOHvWysUatW/Ah1U90YYdWiSX8s7X2JM1BsHocjQOw4Pamm5ABmVJZs2ZU9cRfuW2v20+NlGiXOrBAGJMiAll3OjQKxy5czmyTUi+Ptzqjtbmze9pvSijwqpQWda7rn+UkRqh6xy++CHVankuKs8tdui42PRsZG7X7O/ASs6t5vi46+EafhXJ6E75JUxOl/V/lLnm3UCzVf86QSl+cGL7aDhSvfo4Dgp6BfFuMKia6zp7d8Q11i2xSzSXt5OLaZjQdJgTolcSRAiUjc3igKqgZl2/eONGHWm1djXbzjdcXtgz9w1AGBLOtH+Cqc1QyFRZRBTZ1aLBs+iy72B3ZdswzYY5tUQVco3Kzbw0r7rEH9A4ZRkqpuTpFHWNsWL2NydbERxBHHjcfxcvZCEq9DwBHq6CIR54rVcZjgtOR+Z8OrhR72YB08S1rAodG5hy7xzGN1TZLAA2eJEBsOjcYSv/cCDA97truG3dQQ5I1epn101bh29b0+5mXhnb7LezWJRNIZxzdT7eJzHei5a6mayvy3wSM04fm2fuwfUxyRMdKiHk5NdwvB2IclL20+uJc9n8+Oklb5Yc5yn5By3XyMOU9jsbd7AeU9YRFfGnGFdZUMd//Re74vsNMTrpWMfgq0fiaUGkwwQv5YpbVN89QG2tipKI/xKe6jxrwp4AjBsU6mFgBgMjUZayGbdncNZZLyAGCEgK0oFDbjE1FPDKmkWRLQ9Ni+j3NtzCtqBpVCFNdzb4z/wX4HCbv7rI1+A+KoljFkq9GxbFSDD5YcorunU/uKxf1xxIHaXSC41LtZSDZok+ESFGscqg+nXdMbYD7uUUSjzujQFuqbD9fjlnSkw0ieRlkRhSa3KuqlUnaXUgor+A3XHmk7yRKv5524Pm0KG/3kiuitc3Jz7YiBFRtymqKyGEDbwd7xXYL0FdQe6NycYGPGX6QvWXRLY1eVwGQZSaBTL/dFn2QfXGbmRyW861S6S9Q0LO7aut6uDr3t4ng1t454IY4/Mdb4gC2ZEZjzbPRHmiallN8P/vkSoacH6rPEwhT6kQ5C5pb0DGJKKDiTvc2mIiBTp1M4X85xiSBPxKXdgoTsVJlhsv5SZ040+5D/Xa1EIZpjXVC741uyeTtKWBtsXrXN0TXln0C78whEkCpeop0LHb5JT9UtQXXbr6DYe5r+6f+DOX9TfiylvSQRVjxH24Iw1x82iY6MZXMhpRBN1ykMcIqJqrY1Iq+i8ruTLN5y9t8y9GpgwkkfLCA71O5BuA6z4cp/WuRPjvK9l/i2887u+M3mc+A44p3cSIf+hbT9VkHJ8EvLh9FTc3+QX4CJNtBMMWDPK0hWrao9p3Xwp71UIEpu6deN/M7x3AROB/6PZMjarx5gt0OImosipT0EI/hDtyOjg4Hcyi59k/HC/yGAlbDVGPLhkTIYqXbtPtb+SbtXtD1HhrZk+d6nXv18x3cdES7IjAg1oCSoK1pAH15/smw/ftKMQRTNuXJaMO0l4nWGPG93amTK4lgM7emGTyC7OtD5gEUPuROa80hejGP+zgbWogn8a5EHjjP3+hbesd+0uxbBLK/67NKOE8wFI/CGRAqAR353WrLKEsfkWl/1MyOIKQPKd6PFwvVxZWlBtE/qvraaoZhm/a/1zFuND4b6sS5uX9/Wt9wV6n8J0QO/IlcBC7gC/tAkkbN1p311JZOcvHOd+muxdSeJq+8hqop3kNDuH87rk8AzgtrlK4BHhE4zvms5t2ZI+UoNFFDHLwlkLd79Eal5kunAPHkqHjse0YPud6Bg/P3a/Xd9arakVQMSD08wZII8BhPXigr0moyxQM2TAI+/3a23N3os3/x2cjgASAhAocaBmRLmvk8uF/6eDxjr0QHV+QZnpqeq/aYmgmCqd4HM4lgAA==" alt="সমিতির লোগো"></div>
-    <div>
-      <h1>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি</h1>
-      <div class="en">CUET Medical Welfare Association</div>
-      <div class="reg">নিবন্ধন নং: DA:09571/18 · সকল চুয়েটিয়ানের জন্য, চুয়েটিয়ানদের অর্থায়নে গঠিত ও চুয়েটিয়ান দ্বারা পরিচালিত</div>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#home" data-go="home">
+      <span class="logo"><img src="images/logo.webp" alt="সমিতির লোগো" onerror="this.style.visibility='hidden'"></span>
+      <span class="brand-text"><b>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি</b><small>CUET Medical Welfare Association</small></span>
+    </a>
+    <div class="head-cta">
+      <a class="btn small" href="#renew" data-go="renew">সদস্য হোন</a>
+      <a class="btn small ghost-light" href="#donate" data-go="donate">অনুদান দিন</a>
     </div>
   </div>
+  <nav class="tabs" aria-label="পাতার বিভাগ">
+    <div class="wrap" role="tablist">
+      <button class="tab" role="tab" id="t-home" data-tab="home" aria-controls="home">হোম</button>
+      <button class="tab" role="tab" id="t-about" data-tab="about" aria-controls="about">আমাদের সম্পর্কে</button>
+      <button class="tab" role="tab" id="t-help" data-tab="help" aria-controls="help">সহায়তা</button>
+      <button class="tab" role="tab" id="t-stats" data-tab="stats" aria-controls="stats">স্বচ্ছতা ও পরিসংখ্যান</button>
+      <button class="tab" role="tab" id="t-renew" data-tab="renew" aria-controls="renew">সদস্যপদ</button>
+      <button class="tab" role="tab" id="t-donate" data-tab="donate" aria-controls="donate">অনুদান দিন</button>
+      <button class="tab" role="tab" id="t-notice" data-tab="notice" aria-controls="notice">নোটিশ</button>
+      <button class="tab" role="tab" id="t-contact" data-tab="contact" aria-controls="contact">যোগাযোগ</button>
+    </div>
+  </nav>
 </header>
-
-<nav class="tabs" aria-label="পাতার বিভাগ">
-  <div class="wrap" role="tablist">
-    <button class="tab" role="tab" id="t-home" data-tab="home" aria-controls="home">আমাদের কথা</button>
-    <button class="tab" role="tab" id="t-stats" data-tab="stats" aria-controls="stats">সদস্য ও অনুদান</button>
-    <button class="tab" role="tab" id="t-help" data-tab="help" aria-controls="help">সহায়তা</button>
-    <button class="tab" role="tab" id="t-renew" data-tab="renew" aria-controls="renew">সদস্যপদ নবায়ন</button>
-    <button class="tab" role="tab" id="t-notice" data-tab="notice" aria-controls="notice">নোটিশ ও আপডেট</button>
-    <button class="tab" role="tab" id="t-contact" data-tab="contact" aria-controls="contact">যোগাযোগ</button>
-  </div>
-</nav>
 
 <main class="wrap">
 
 <!-- ============ HOME ============ -->
 <div class="panel" id="home" role="tabpanel" aria-labelledby="t-home">
+  <section class="banner">
+    <img class="banner-img" src="images/campus-aerial.webp" alt="ওপর থেকে চুয়েট ক্যাম্পাস" onerror="this.remove()">
+    <div class="banner-in">
+      <div class="eyebrow light">নিবন্ধন নং ঢ-০৯৫৭১ · সমাজসেবা অধিদফতর</div>
+      <h1>চুয়েটিয়ানদের প্রয়োজনে,<br>চুয়েটিয়ানদের দ্বারা</h1>
+      <p>অসুস্থতা বা দুর্ঘটনার দিনে কোনো চুয়েটিয়ান পরিবার যেন একা না থাকে। ২০১৬ থেকে প্রাক্তন ও বর্তমান শিক্ষার্থীদের গড়া তহবিল থেকে আমরা সদস্য ও তাঁদের পরিবারের চিকিৎসায় পাশে দাঁড়াই।</p>
+      <div class="banner-cta">
+        <a class="btn" href="#renew" data-go="renew">আজীবন সদস্য হোন</a>
+        <a class="btn ghost-light" href="#donate" data-go="donate">অনুদান দিন</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="statband" aria-label="এক নজরে">
+    <div class="stat"><b class="num">১,২৬৩</b><span>নিবন্ধিত সদস্য</span></div>
+    <div class="stat"><b class="num">৮৬৬</b><span>আজীবন সদস্য</span></div>
+    <div class="stat"><b class="num">৩৪</b><span>চিকিৎসা অনুদান</span></div>
+    <div class="stat"><b class="num">৳ ২০.২৬ লাখ</b><span>মোট অনুদান বিতরণ</span></div>
+    <p class="note">জুন ২০২৬ পর্যন্ত, সমিতির সদস্য ও অনুদান রেজিস্টার থেকে</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">যেভাবে কাজ করে</div>
+    <h2>প্রতি ২৫ জনের একটি সুরক্ষা-বৃত্ত</h2>
+    <div class="howgrid">
+      <div class="how"><span class="how-n">১</span><h3>সদস্য হোন</h3><p>চুয়েট, বিআইটি চট্টগ্রাম বা চট্টগ্রাম প্রকৌশল মহাবিদ্যালয়ের প্রাক্তন ও চুয়েটের বর্তমান শিক্ষার্থীরা আজীবন বা বার্ষিক সদস্য হতে পারেন।</p></div>
+      <div class="how"><span class="how-n">২</span><h3>তহবিল বাড়ে</h3><p>সদস্যদের অংশগ্রহণের মূল টাকা সঞ্চয়ে থাকে, তা থেকে অর্জিত মুনাফা দিয়েই সহায়তা দেওয়া হয়। মূলধনে হাত দেওয়া হয় না।</p></div>
+      <div class="how"><span class="how-n">৩</span><h3>প্রয়োজনে পাশে</h3><p>সদস্য নিজে, কিংবা তাঁর বাবা-মা, স্বামী/স্ত্রী বা সন্তান অসুস্থ হলে আবেদন করলে নির্বাহী কমিটি যাচাই করে অনুদান দেয়।</p></div>
+    </div>
+  </section>
+
   <section class="hero">
     <div style="display:grid;gap:14px">
       <div class="eyebrow">কেন এই সমিতি</div>
       <h2>আজ তিনি, কাল হয়তো আমি</h2>
-      <p>বাংলাদেশের অন্যতম প্রকৌশল শিক্ষা প্রতিষ্ঠান চুয়েট। এর সংখ্যাগরিষ্ঠ শিক্ষার্থী আসে বাংলাদেশের সমাজব্যবস্থার প্রতিনিধিত্বকারী মধ্যবিত্ত পরিবার থেকে, যারা সবুজ-শ্যামল এই ক্যাম্পাসে গড়ে তোলে আরও একটি পরিবার।</p>
-      <p>প্রকৌশল শিক্ষার ব্যস্ততা আর ক্যাম্পাস জীবনের বর্ণিলতাকে ম্লান করে দিয়ে প্রকৃতি এখানেও প্রায়ই চাপিয়ে দেয় মারাত্মক ব্যাধি, দুর্ঘটনাসহ নানা অনাকাঙ্ক্ষিত ঘটনা, যার ব্যয় নির্বাহে মধ্যবিত্ত পরিবারগুলো হিমশিম খায়। আগে দেখা গেছে, চুয়েট পরিবারের বর্তমান ও সাবেক ছাত্ররা রাত-দিন খেটে অর্থের সংস্থান করেছে। কিন্তু স্বল্প সময়ে এটা অত্যন্ত কঠিন ও অনিশ্চিত।</p>
-      <p>সমিতির উদ্দেশ্য সমস্যা সৃষ্টির আগেই প্রস্তুত থাকা। অসুস্থতা বা দুর্ঘটনা আমরা বন্ধ করতে পারি না, কিন্তু তা মোকাবেলায় একধাপ এগিয়ে থাকতে পারি; এর জন্য প্রয়োজন শুধু আমাদের সদিচ্ছা।</p>
+      <p>বাংলাদেশের অন্যতম প্রকৌশল শিক্ষা প্রতিষ্ঠান চুয়েট। এর সংখ্যাগরিষ্ঠ শিক্ষার্থী আসে মধ্যবিত্ত পরিবার থেকে, যারা সবুজ-শ্যামল এই ক্যাম্পাসে গড়ে তোলে আরও একটি পরিবার।</p>
+      <p>মারাত্মক ব্যাধি বা দুর্ঘটনার ব্যয় নির্বাহে অনেক পরিবার হিমশিম খায়। আগে দেখা গেছে, চুয়েট পরিবারের বর্তমান ও সাবেক ছাত্ররা রাত-দিন খেটে অর্থের সংস্থান করেছে, কিন্তু স্বল্প সময়ে তা অত্যন্ত কঠিন ও অনিশ্চিত। সমিতির উদ্দেশ্য সমস্যা সৃষ্টির আগেই প্রস্তুত থাকা।</p>
       <p class="quote">আমরাই পারি এই তহবিলকে মহীরুহের রূপ দিতে। কে জানে, কাল হয়তো আমার বা আপনার পাশেই দাঁড়াবে এই তহবিল, পরম নির্ভরতা হয়ে।</p>
+      <p><a href="#about" data-go="about">আমাদের গল্প পড়ুন →</a></p>
     </div>
-    <div class="ph"><span>ছবি: প্রধান ব্যানার / ক্যাম্পাস</span><span>(প্লেসহোল্ডার, পরে বদলানো হবে)</span></div>
+    <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:4/3" onerror="this.remove()">
   </section>
 
-  <section class="story">
-    <div class="eyebrow">আমাদের গল্প</div>
-    <h2>একটি বিকেলের স্বপ্ন থেকে সমিতি</h2>
-    <div class="story-grid">
-      <div class="story-text">
-        <p>বাংলাদেশের আর্থসামাজিক প্রেক্ষাপটে রাষ্ট্রীয় অন্যান্য সকল বিশ্ববিদ্যালয়ের মত চট্টগ্রাম প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়েও প্রধানত মধ্যবিত্ত ও নিম্নবিত্ত পরিবারের সন্তানেরাই উচ্চশিক্ষা গ্রহণে আসেন। প্রাকৃতিক নিয়মেই এই বিদ্যাপীঠের প্রাক্তন ও বর্তমান ছাত্রছাত্রীদের মধ্যে কেউ কেউ এমন অসুস্থতা বা অনাকাঙ্ক্ষিত দুর্ঘটনার শিকার হন, যার চিকিৎসা ব্যয় বহন তাঁর ও তাঁর পরিবারের জন্য অসম্ভব হয়ে পড়ে। তখন সবুজ-শ্যামল এই ক্যাম্পাসের প্রাক্তন ও বর্তমান চুয়েটিয়ানদের কাছেই আশাটা তীব্র হয়ে ওঠে।</p>
-        <p>চুয়েটের সুতীব্র ভ্রাতৃত্ববোধে আমরা বারবার পরস্পরের প্রয়োজনে আর্থিক সহযোগিতায় এগিয়ে এসেছি। তবে অধিকাংশ ক্ষেত্রে দেখা গেছে, সহযোগিতা সংগ্রহের পরিকল্পনা, সংগ্রাহক টিম গঠন আর সুষ্ঠুভাবে পৌঁছে দিতে অনেক অনাকাঙ্ক্ষিত বিলম্ব হয়।</p>
-        <p>এই বিষয়ে করণীয় নির্ধারণে ২০১৬ সালের এক বিকেলে চুয়েটের ১০ম ব্যাচের শ্রদ্ধেয় প্রকৌশলী জনাব মোঃ জসীম উদ্দিন কিছু তরুণ প্রকৌশলীকে ডেকে এক স্বপ্নের কথা জানান: কোনো চুয়েটিয়ান অসুস্থ বা দুর্ঘটনায় পড়ার আগেই তাঁর জন্য একটি নির্ভরযোগ্য তহবিল গড়ে তোলা। একদল তরুণ কর্মী নিয়ে তাঁর অক্লান্ত পরিশ্রমের ফসল চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি। এই সমিতির অর্থায়ন, নিয়ন্ত্রণ ও পরিচালনা করছেন চুয়েটিয়ানরা, সহায়তাও পাবেন চুয়েটিয়ানরাই।</p>
-        <p>আমরা স্বপ্ন দেখি, একদিন হঠাৎ অসুস্থ হয়ে পড়া বা দুর্ঘটনার শিকার কোনো চুয়েটিয়ানকে চিকিৎসা ব্যয়ের জন্য দিশেহারা হতে হবে না। আমরা স্বপ্ন দেখি, আমরা আমাদের জন্যই হয়ে উঠব মানবতা, ভালোবাসা ও ভ্রাতৃত্ববোধের নির্ভরযোগ্য ভ্যানগার্ড।</p>
-        <p class="quote">প্রিয় চুয়েটিয়ান, এই সম্মিলিত যাত্রায় আজীবন সদস্য হয়ে সহযাত্রী হওয়ার জন্য আপনাকে সাদর আমন্ত্রণ। #WEforUS</p>
-      </div>
-      <div class="ph" style="aspect-ratio:3/4"><span>ছবি: চুয়েট ক্যাম্পাস / প্রতিষ্ঠাকালীন সভা</span><span>(প্লেসহোল্ডার)</span></div>
-    </div>
+  <section>
+    <div class="sec-head"><div><div class="eyebrow">সাম্প্রতিক সহায়তা</div><h2>সমিতি যাঁদের পাশে দাঁড়িয়েছে</h2></div><a href="#help" data-go="help">সব দেখুন →</a></div>
+    <div class="posts" id="latestPosts"></div>
   </section>
 
   <section class="video-sec">
@@ -304,72 +398,64 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
     </div>
   </section>
 
-  <section>
-    <div class="eyebrow">এক নজরে · জুন ২০২৬ পর্যন্ত</div>
-    <div class="tiles">
-      <div class="tile"><b class="num">১,২৬৩</b><span class="t">মোট সদস্য</span><small>২০১৬ থেকে নিবন্ধিত সব সদস্য</small></div>
-      <div class="tile"><b class="num c-blue">৮৬৬</b><span class="t">আজীবন সদস্য</span><small>মোট সদস্যের ৬৯%</small></div>
-      <div class="tile"><b class="num c-orange">৩৪</b><span class="t">চিকিৎসা অনুদান</span><small>২০১৮ থেকে জুন ২০২৬</small></div>
-      <div class="tile dark"><b class="num">২০.২৬</b><span class="t">লাখ টাকা</span><small>মোট অনুদান বিতরণ</small></div>
+  <section class="ctaband">
+    <div>
+      <h2>সদস্যের ১০%ও সাড়া দিলে তহবিল কোটির পথে এক ধাপ এগোয়</h2>
+      <p>৮৬৬ জন আজীবন সদস্য একজন করে নতুন সদস্য আনলেই সদস্য সংখ্যা প্রায় দ্বিগুণ হয়। আপনার ব্যাচের বন্ধুকে আজই আমন্ত্রণ জানান।</p>
+    </div>
+    <div class="banner-cta">
+      <a class="btn" href="#renew" data-go="renew">সদস্যপদের বিস্তারিত</a>
+      <a class="btn ghost-light" href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">ফেসবুক গ্রুপে যোগ দিন</a>
     </div>
   </section>
+</div>
 
-  <section class="two">
-    <div class="soft" style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center">
-      <div class="dot25" aria-hidden="true"></div>
-      <div style="display:grid;gap:6px">
-        <h3>প্রতি ২৫ জনের একটি সুরক্ষা-বৃত্ত</h3>
-        <p>২৪ জনের অংশগ্রহণ থেকে অর্জিত <strong>মুনাফা</strong> দাঁড়ায় <strong class="c-orange">১ জনের</strong> পাশে। অংশগ্রহণের মূল টাকা কখনো সরাসরি অনুদানে দেওয়া হয় না।</p>
-        <p class="note">এখন পর্যন্ত ৮৬৬ জন আজীবন সদস্যের মধ্যে ৩৪ জন অনুদান পেয়েছেন (৩.৯%)। গড় অনুদান প্রায় ৫৯,৬০০ টাকা।</p>
+<!-- ============ ABOUT ============ -->
+<div class="panel" id="about" role="tabpanel" aria-labelledby="t-about" hidden>
+  <section class="story">
+    <div class="eyebrow">আমাদের গল্প</div>
+    <h2>একটি বিকেলের স্বপ্ন থেকে সমিতি</h2>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>বাংলাদেশের আর্থসামাজিক প্রেক্ষাপটে রাষ্ট্রীয় অন্যান্য সকল বিশ্ববিদ্যালয়ের মত চট্টগ্রাম প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়েও প্রধানত মধ্যবিত্ত ও নিম্নবিত্ত পরিবারের সন্তানেরাই উচ্চশিক্ষা গ্রহণে আসেন। প্রাকৃতিক নিয়মেই এই বিদ্যাপীঠের প্রাক্তন ও বর্তমান ছাত্রছাত্রীদের মধ্যে কেউ কেউ এমন অসুস্থতা বা অনাকাঙ্ক্ষিত দুর্ঘটনার শিকার হন, যার চিকিৎসা ব্যয় বহন তাঁর ও তাঁর পরিবারের জন্য অসম্ভব হয়ে পড়ে।</p>
+        <p>চুয়েটের সুতীব্র ভ্রাতৃত্ববোধে আমরা বারবার পরস্পরের প্রয়োজনে আর্থিক সহযোগিতায় এগিয়ে এসেছি। তবে অধিকাংশ ক্ষেত্রে দেখা গেছে, সহযোগিতা সংগ্রহের পরিকল্পনা, সংগ্রাহক টিম গঠন আর সুষ্ঠুভাবে পৌঁছে দিতে অনেক অনাকাঙ্ক্ষিত বিলম্ব হয়।</p>
+        <p>এই বিষয়ে করণীয় নির্ধারণে ২০১৬ সালের এক বিকেলে চুয়েটের ১০ম ব্যাচের শ্রদ্ধেয় প্রকৌশলী জনাব মোঃ জসীম উদ্দিন কিছু তরুণ প্রকৌশলীকে ডেকে এক স্বপ্নের কথা জানান: কোনো চুয়েটিয়ান অসুস্থ বা দুর্ঘটনায় পড়ার আগেই তাঁর জন্য একটি নির্ভরযোগ্য তহবিল গড়ে তোলা। একদল তরুণ কর্মী নিয়ে তাঁর অক্লান্ত পরিশ্রমের ফসল চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি।</p>
+        <p>আমরা স্বপ্ন দেখি, একদিন হঠাৎ অসুস্থ হয়ে পড়া বা দুর্ঘটনার শিকার কোনো চুয়েটিয়ানকে চিকিৎসা ব্যয়ের জন্য দিশেহারা হতে হবে না। আমরা আমাদের জন্যই হয়ে উঠব মানবতা, ভালোবাসা ও ভ্রাতৃত্ববোধের নির্ভরযোগ্য ভ্যানগার্ড।</p>
+        <p class="quote">#WEforUS</p>
       </div>
-    </div>
-    <div class="soft" style="display:grid;gap:10px">
-      <h3>সদস্য বাড়লে প্রতিজনের অনুদান বাড়ে</h3>
-      <p class="note">প্রতি অনুদান সর্বোচ্চ কত হতে পারে (অনুমিত)</p>
-      <div class="hbars" id="growBars"></div>
-      <p class="note">অনুমিত: আজীবন ফি ১১,০০০ টাকা, মূলধনে হাত না দিয়ে প্রায় ৯% মুনাফা, বছরে ৮টি অনুদান (মূল পরিকল্পনার হিসাব)।</p>
+      <img class="photo" src="images/campus-road.webp" alt="কুয়াশাভোরে চুয়েট ক্যাম্পাসের পথ" style="aspect-ratio:4/5" onerror="this.remove()">
     </div>
   </section>
 
   <section>
-    <div class="eyebrow">মূল পরিকল্পনা</div>
-    <h2>যে স্বপ্নে শুরু, আর আজ আমরা কোথায়</h2>
-    <div class="chartrow">
-      <div class="tbl"><table>
-        <thead><tr><th>বিষয়</th><th class="r">পরিকল্পনা</th><th class="r">জুন ২০২৬</th></tr></thead>
-        <tbody>
-          <tr><td>আজীবন সদস্য</td><td class="r">৪,০০০</td><td class="r">৮৬৬</td></tr>
-          <tr><td>বছরে তহবিলের মুনাফা</td><td class="r">৪০ লাখ+</td><td class="r">আনুমানিক ৬–৮ লাখ*</td></tr>
-          <tr><td>প্রতিটি সহায়তা</td><td class="r">৫ লাখ পর্যন্ত</td><td class="r">গড় ৭৩,৪০০</td></tr>
-          <tr><td>বছরে সহায়তাপ্রাপ্ত</td><td class="r">৮ জন</td><td class="r">৪–৮ জন</td></tr>
-          <tr><td>নীতি</td><td class="r">মূলধনে হাত নয়</td><td class="r">ঝুঁকিতে</td></tr>
-        </tbody></table></div>
-      <div class="callout"><b class="big">২২%</b><p>আজীবন সদস্যের লক্ষ্যের মাত্র এতটুকু পূরণ হয়েছে</p><small>১০,০০০+ পাশ করা প্রকৌশলীর মধ্যে সদস্য ১৩%-এরও কম</small></div>
+    <div class="eyebrow">লক্ষ্য ও উদ্দেশ্য</div>
+    <h2>গঠনতন্ত্রে যা বলা আছে</h2>
+    <div class="cards three">
+      <div class="card"><h3>চিকিৎসা সহায়তা</h3><p>চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয়ের স্নাতক সদস্য ও বর্তমান শিক্ষার্থী সদস্য, এবং তাঁদের বাবা-মা, স্বামী/স্ত্রী ও সন্তানকে প্রয়োজনের নিরিখে সম্ভাব্য চিকিৎসা সহায়তা।</p></div>
+      <div class="card"><h3>তহবিল গঠন</h3><p>চুয়েট প্রশাসন, বর্তমান ও প্রাক্তন শিক্ষার্থীদের সাথে যোগাযোগ রেখে তহবিল সংগ্রহ ও সংরক্ষণ।</p></div>
+      <div class="card"><h3>সমাজের সহযোগিতা</h3><p>সমাজের সচেতন মানুষদের সাথে যথাযথ সম্মান বজায় রেখে যোগাযোগের মাধ্যমে তহবিলে অনুদান সংগ্রহ।</p></div>
     </div>
-    <p class="note">আগের হিসাবে প্রতি বছর ৬–১২ জন একান্ত নিরুপায় হয়ে সহায়তা চান। ২০২৪ সালে অনুদান গেছে ৫.৫ লাখ, যা আজকের জমার আনুমানিক মুনাফার কাছাকাছি বা বেশি। *মুনাফার অঙ্ক অনুমিত (প্রায় ৯% হারে); প্রকৃত আয় চূড়ান্ত খসড়ায় যুক্ত করা হবে।</p>
+    <p class="note">সমিতি রাজনৈতিক, ধর্মীয় বা ব্যক্তিগত মতাদর্শ ও প্রভাবমুক্ত থেকে কাজ করে। ধর্ম, বর্ণ, জাতীয়তা সদস্য হওয়ার ক্ষেত্রে বাধা নয়।</p>
   </section>
 
   <section>
-    <div class="eyebrow">একজন আজীবন সদস্যের আহ্বান</div>
-    <h2>আশা বলি আর ভরসাই বলি, তা আমরাই</h2>
-    <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-      <div class="card"><h3>নীতিমালা কেন জরুরি</h3><p>সদস্য না হলে সমিতি থেকে অনুদান পাওয়া যায় না। নীতিমালা ভেঙে তহবিলের বড় অংশ একজনকে দিলে তাঁর প্রয়োজনও মেটে না, তহবিলও মুখ থুবড়ে পড়ে।</p></div>
-      <div class="card"><h3>একমাত্র সমাধান</h3><p>প্রতিটি জরুরি ঘটনার জন্য আলাদা তহবিল সংগ্রহ, আর সাথে সাথে সমিতির তহবিলকে বড় করা, যাতে ভবিষ্যতে কাউকে চিকিৎসার টাকার চিন্তায় নির্ঘুম রাত কাটাতে না হয়।</p></div>
-      <div class="card"><h3>সাড়া দিন</h3><p>সদস্য হওয়ার আমন্ত্রণ অনেকের ফোনে ও ইনবক্সে পড়ে আছে। তার ১০%ও সাড়া দিলে তহবিল কোটির পথে এক ধাপ এগিয়ে যাবে।</p></div>
+    <div class="eyebrow">সাংগঠনিক কাঠামো</div>
+    <h2>চার স্তরের সমিতি</h2>
+    <div class="tiers">
+      <div class="tier"><b>উপদেষ্টা পরিষদ</b><p>চুয়েটের উপাচার্য (সভাপতি), উপ-উপাচার্য ও ছাত্র কল্যাণ পরিচালক; পরে দুই মেয়াদ সফলভাবে দায়িত্ব পালনকারী প্রাক্তন সভাপতিরাও।</p></div>
+      <div class="tier"><b>নির্বাহী কমিটি</b><p>সভাপতি, সহ-সভাপতি, সাধারণ সম্পাদক, কোষাধ্যক্ষ, ছাত্র বিষয়ক সম্পাদক ও দশ জন সদস্য। মেয়াদ তিন বছর। তহবিল গঠন ও অনুদানের মূল সিদ্ধান্ত এখান থেকে।</p></div>
+      <div class="tier"><b>কাউন্সিল কমিটি</b><p>প্রতি ব্যাচ থেকে সর্বোচ্চ ৩ জন প্রতিনিধি। মাঠ পর্যায়ের সংগঠক, সাধারণ পরিষদ ও নির্বাহী কমিটির মধ্যে সমন্বয়।</p></div>
+      <div class="tier"><b>সাধারণ পরিষদ</b><p>সমিতির সকল সদস্য। বার্ষিক সাধারণ সভায় কার্যক্রম পর্যালোচনা ও কাউন্সিলর নির্বাচন।</p></div>
     </div>
-    <p>যাঁরা প্রতিবার জরুরি প্রয়োজনে রাত-দিন খেটেছেন, তাঁরা সবাই এই সমিতিরই একনিষ্ঠ কর্মী। হাতে গোনা কয়েকজনের ওপর ভর করে এভাবে কতদিন চলবে? <strong class="c-orange">WE for US</strong></p>
-    <p class="note">একজন আজীবন সদস্যের ব্যক্তিগত মতামত থেকে সংক্ষেপিত; ব্যক্তির নাম বাদ দেওয়া হয়েছে।</p>
+    <p class="note">সূত্র: সমিতির গঠনতন্ত্র, ২৫ জুলাই ২০১৮। <a href="#notice" data-go="notice">নোটিশে সংক্ষেপ দেখুন →</a></p>
   </section>
 
   <section>
-    <div class="eyebrow">ছবিতে সমিতি</div>
-    <div class="gallery">
-      <div class="ph"><span>ছবি: সাধারণ সভা</span></div>
-      <div class="ph"><span>ছবি: অনুদান হস্তান্তর</span></div>
-      <div class="ph"><span>ছবি: কার্যনির্বাহী কমিটি</span></div>
-      <div class="ph"><span>ছবি: ব্যাচ প্রতিনিধি সভা</span></div>
-      <div class="ph"><span>ছবি: রক্তদান / স্বেচ্ছাসেবা</span></div>
-      <div class="ph"><span>ছবি: পুনর্মিলনী</span></div>
+    <div class="eyebrow">লোগো ও স্লোগান</div>
+    <h2>প্রসারিত হাত, উড়ন্ত পাখি</h2>
+    <div class="logo-about">
+      <img src="images/logo.webp" alt="সমিতির লোগো" onerror="this.remove()">
+      <p>একটি প্রসারিত হাতের প্রতিচ্ছবি চুয়েট পরিবারের সার্বিক নির্ভরতার প্রতীক। গিয়ারটি অফুরান প্রাণশক্তির আধার। উড্ডয়মান পাখিরা চুয়েটের বর্তমান ও সাবেক শিক্ষার্থী এবং তাঁদের পরিবার; কালো পাখি অসুস্থতা, সাদা পাখি সুস্থতার নির্দেশক। সামগ্রিকভাবে ছবিটি বলে, আমাদের প্রাণশক্তির স্পর্শে অসুস্থ চুয়েটিয়ান ও তাঁর পরিবার সুস্থ হয়ে আবার ডানা মেলছে। স্লোগান: <strong>#WEforUS</strong>।</p>
     </div>
   </section>
 </div>
@@ -590,15 +676,19 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
   </section>
 </div>
 
-<!-- ============ RENEW ============ -->
+<!-- ============ MEMBERSHIP ============ -->
 <div class="panel" id="renew" role="tabpanel" aria-labelledby="t-renew" hidden>
   <section class="hero">
     <div style="display:grid;gap:12px">
-      <div class="eyebrow">সদস্যপদ নবায়ন</div>
-      <h2>আপনার সুরক্ষা-বৃত্ত সচল রাখুন</h2>
-      <p class="lede">৩৯৬ জন বার্ষিক সদস্যের ২০২৬ সালের অংশগ্রহণ ফি তালিকায় পরিশোধিত দেখাচ্ছে না। আপনি যদি তাঁদের একজন হন, নিচের ধাপগুলো মেনে নবায়ন করুন, অথবা একবারে আজীবন সদস্য হয়ে যান। আগেই নবায়ন করে থাকলে ফর্মটি পূরণ করে জানান, আমরা তালিকা ঠিক করে নেব।</p>
+      <div class="eyebrow">সদস্যপদ</div>
+      <h2>সদস্য হোন, সুরক্ষা-বৃত্তে যুক্ত হোন</h2>
+      <p class="lede">চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থীরা সদস্য হতে পারেন। নির্ধারিত ফরম অনলাইনে বা হাতে পূরণ করে যে কোনো সময় আবেদন করা যায়।</p>
+      <div class="banner-cta" style="margin-top:4px">
+        <a class="btn" href="https://members.cuetmwa.org/" target="_blank" rel="noopener">অনলাইনে আবেদন করুন</a>
+        <a class="btn ghost" href="#renewForm">নবায়নের বার্তা তৈরি করুন</a>
+      </div>
     </div>
-    <div class="ph" style="aspect-ratio:16/10"><span>ছবি: নবায়ন ক্যাম্পেইন ব্যানার</span><span>(প্লেসহোল্ডার)</span></div>
+    <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:16/10" onerror="this.remove()">
   </section>
 
   <section>
@@ -611,39 +701,38 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
       </tbody></table></div>
     <div class="soft" style="display:grid;gap:6px">
       <h3>বার্ষিক থেকে আজীবনে রূপান্তর <span class="tbd">প্রস্তাবিত · কমিটির অনুমোদন সাপেক্ষে</span></h3>
-      <p>বকেয়া বার্ষিক ফি মওকুফ করে আজীবন সদস্যপদে রূপান্তরের বিশেষ সুযোগ আলোচনাধীন। সিদ্ধান্ত হলে <a href="#notice" data-go="notice">নোটিশ ও আপডেট</a> ট্যাবে জানানো হবে। আগ্রহী হলে ফর্মে "আজীবনে রূপান্তর" বেছে নিন।</p>
+      <p>বকেয়া বার্ষিক ফি মওকুফ করে আজীবন সদস্যপদে রূপান্তরের বিশেষ সুযোগ আলোচনাধীন। সিদ্ধান্ত হলে <a href="#notice" data-go="notice">নোটিশে</a> জানানো হবে।</p>
     </div>
-    <p class="note">সূত্র: সমিতির সদস্যভুক্তি বুকলেট। বিঃ দ্রঃ যে কেউ যে কোনো পরিমাণ অর্থ সমিতির তহবিলে অনুদান হিসেবে দিতে পারেন।</p>
+    <p class="note">সূত্র: সমিতির সদস্যভুক্তি বুকলেট। শুধু আজীবন সদস্যদের আজীবন সদস্য কার্ড দেওয়া হয়। কোনো সদস্য মৃত্যুবরণ করলে শর্তসাপেক্ষে তাঁর পরিবারের একজন বিশেষ সদস্য হিসেবে গণ্য হন।</p>
   </section>
 
-  <section>
-    <h2>সদস্য হতে যা লাগবে</h2>
-    <p class="lede">নির্ধারিত ফরম হাতে কিংবা অনলাইনে পূরণ করে যে কোনো সময় সদস্যভুক্তির জন্য আবেদন করা যায়।</p>
-    <ul class="req">
-      <li>ছবি ১ (এক) কপি, পাসপোর্ট সাইজ</li>
-      <li>প্রকৌশলীদের জন্য প্রকৌশল সনদপত্রের কপি, শিক্ষার্থীদের জন্য আইডি কার্ডের কপি</li>
-      <li>সদস্যভুক্তির আবেদন ফি, অথবা আবেদন ফি জমার রশিদ</li>
-    </ul>
-    <p class="note">cuetmwa.org থেকে দেশ-বিদেশ থেকে সদস্যভুক্তি ফি, বার্ষিক সদস্য চাঁদা, আজীবন সদস্য চাঁদা ও অনুদান দেওয়ার অনলাইন ব্যবস্থা <span class="tbd">শীঘ্রই চালু হবে</span>। আপাতত নিচের ব্যাংক বা বিকাশে জমা দিন।</p>
+  <section class="two">
+    <div class="soft" style="display:grid;gap:10px">
+      <h3>আবেদনে যা লাগবে</h3>
+      <ul class="req">
+        <li>ছবি ১ (এক) কপি, পাসপোর্ট সাইজ</li>
+        <li>প্রকৌশলীদের জন্য প্রকৌশল সনদপত্রের কপি, শিক্ষার্থীদের জন্য আইডি কার্ডের কপি</li>
+        <li>সদস্যভুক্তির আবেদন ফি, অথবা ফি জমার রশিদ</li>
+      </ul>
+    </div>
+    <div class="soft" style="display:grid;gap:10px">
+      <h3>আবেদনের পর</h3>
+      <ol class="req">
+        <li>কমিটি তথ্য যাচাই ও অনুমোদন করে</li>
+        <li>অনুমোদনের পর একটি সদস্য নম্বর দেওয়া হয়, যা ভবিষ্যতে সব যোগাযোগে পরিচয় নম্বর</li>
+        <li>অনুদানের আবেদনে এই সদস্য নম্বর লাগে</li>
+      </ol>
+    </div>
   </section>
 
   <section>
     <h2>কীভাবে নবায়ন করবেন</h2>
     <ol class="steps">
       <li><div><strong>সদস্য নম্বর জেনে নিন।</strong> জানা না থাকলে ফেসবুক পেজের মেসেঞ্জারে নাম ও ব্যাচ লিখে জিজ্ঞেস করুন।</div></li>
-      <li><div><strong>নিচের যেকোনো মাধ্যমে ফি পাঠান।</strong> রেফারেন্সে আপনার সদস্য নম্বর লিখুন।</div></li>
-      <li><div><strong>নবায়ন ফর্ম পূরণ করুন।</strong> লেনদেন নম্বর (TrxID) ও রক্তের গ্রুপসহ।</div></li>
+      <li><div><strong><a href="#donate" data-go="donate">ব্যাংক বা বিকাশে</a> ফি পাঠান।</strong> রেফারেন্সে আপনার সদস্য নম্বর লিখুন।</div></li>
+      <li><div><strong>নিচের ফর্ম পূরণ করুন।</strong> লেনদেন নম্বর (TrxID) ও রক্তের গ্রুপসহ।</div></li>
       <li><div><strong>তৈরি হওয়া বার্তাটি কপি করে পাঠান</strong> ফেসবুক পেজের মেসেঞ্জারে। কমিটি যাচাই করে তালিকা হালনাগাদ করবে।</div></li>
     </ol>
-  </section>
-
-  <section>
-    <h2>পেমেন্টের মাধ্যম</h2>
-    <div class="pay">
-      <div class="card"><h3>মার্কেন্টাইল ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">114 212 122 935 237</strong></p><p>হিসাবের নাম: CUET Medical Welfare Association</p><p>শাখা: আইইবি, ঢাকা</p></div>
-      <div class="card"><h3>সোনালী ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">৩৪২০৯৭৭২</strong></p><p>হিসাবের নাম: চুয়েট চিকিৎসা সহায়তা তহবিল</p><p>শাখা: চুয়েট শাখা</p></div>
-      <div class="card"><h3>বিকাশ (পার্সোনাল)</h3><p>নম্বর: <strong class="num">01780354476</strong></p><p>রেফারেন্সে সদস্য নম্বর বা নাম লিখুন</p></div>
-    </div>
   </section>
 
   <section>
@@ -676,6 +765,35 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
     </form>
     <p class="note">এই ফর্ম কোনো তথ্য নিজে থেকে কোথাও পাঠায় না; বার্তা তৈরি করে দেয়, যা আপনি নিজে পাঠাবেন।</p>
   </section>
+
+</div>
+
+<!-- ============ DONATE ============ -->
+<div class="panel" id="donate" role="tabpanel" aria-labelledby="t-donate" hidden>
+  <section class="hero">
+    <div style="display:grid;gap:12px">
+      <div class="eyebrow">অনুদান দিন</div>
+      <h2>যে কেউ, যে কোনো পরিমাণ</h2>
+      <p class="lede">সদস্য হোন বা না হোন, যে কেউ যে কোনো সময় সমিতির তহবিলে যে কোনো পরিমাণ অনুদান দিতে পারেন। আপনার অনুদান সঞ্চয়ে যোগ হয়, আর তার মুনাফা থেকে অসুস্থ চুয়েটিয়ান পরিবারের পাশে দাঁড়ানো হয়।</p>
+    </div>
+    <img class="photo" src="images/campus-road.webp" alt="কুয়াশাভোরে চুয়েট ক্যাম্পাসের পথ" style="aspect-ratio:16/10" onerror="this.remove()">
+  </section>
+
+  <section>
+    <h2>অনুদান ও ফি জমার মাধ্যম</h2>
+    <div class="pay">
+      <div class="card"><h3>মার্কেন্টাইল ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">114 212 122 935 237</strong></p><p>হিসাবের নাম: CUET Medical Welfare Association</p><p>শাখা: আইইবি, ঢাকা</p></div>
+      <div class="card"><h3>সোনালী ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">৩৪২০৯৭৭২</strong></p><p>হিসাবের নাম: চুয়েট চিকিৎসা সহায়তা তহবিল</p><p>শাখা: চুয়েট শাখা</p></div>
+      <div class="card"><h3>বিকাশ (পার্সোনাল)</h3><p>নম্বর: <strong class="num">01780354476</strong></p><p>রেফারেন্সে নাম বা সদস্য নম্বর লিখুন</p></div>
+    </div>
+    <p class="note">বিদেশ থেকে ইউএস ডলার বা অন্য স্বীকৃত মুদ্রায় সমপরিমাণ অর্থ পাঠানো যায়। অনুদান দিয়ে সাধারণ সম্পাদক বা অফিসিয়াল নম্বরে জানালে তহবিলের হিসাবে যুক্ত করতে সুবিধা হয়। অনলাইন পেমেন্ট গেটওয়ে <span class="tbd">শীঘ্রই</span>।</p>
+  </section>
+
+  <section class="cards three">
+    <div class="card"><h3>স্বচ্ছতা</h3><p>প্রতিটি অনুদানের তারিখ ও অঙ্ক <a href="#help" data-go="help">সহায়তা</a> পাতায় প্রকাশিত, আবেদনকারীর নাম ছাড়া।</p></div>
+    <div class="card"><h3>নিয়মমাফিক</h3><p>অনুদান শুধু চিকিৎসা ব্যয়ে, শুধু বাংলাদেশি টাকায়। অব্যবহৃত অর্থ তহবিলে ফেরত দিতে হয়।</p></div>
+    <div class="card"><h3>টেকসই তহবিল</h3><p>মূলধনে হাত না দিয়ে মুনাফা থেকে সহায়তা, যাতে তহবিল প্রজন্মের পর প্রজন্ম টেকে।</p></div>
+  </section>
 </div>
 
 <!-- ============ NOTICE ============ -->
@@ -697,37 +815,61 @@ footer b{color:var(--orange-soft);font-family:var(--display);font-size:1.1rem}
   <section>
     <div class="eyebrow">যোগাযোগ</div>
     <h2>আমাদের সাথে যুক্ত থাকুন</h2>
-    <p class="lede">সমিতির সদস্য হতে, অনুদান দিতে বা অনুদান পেতে, কিংবা সমিতির যেকোনো তথ্যের জন্য ওয়েবসাইট বা ফেসবুক গ্রুপের ফাইল সেকশন দেখুন। তহবিল সম্পর্কিত যেকোনো তথ্য জানতে সমিতি পরিচালনা কমিটির সঙ্গে সরাসরি যোগাযোগ করতে পারেন। ফেসবুক পেজটিও আবার সক্রিয় করা হয়েছে, মেসেঞ্জারে নক দিন।</p>
+    <p class="lede">সমিতির সদস্য হতে, অনুদান দিতে বা অনুদান পেতে, কিংবা সমিতির যেকোনো তথ্যের জন্য ওয়েবসাইট বা ফেসবুক গ্রুপের ফাইল সেকশন দেখুন। তহবিল সম্পর্কিত যেকোনো তথ্য জানতে সমিতি পরিচালনা কমিটির সঙ্গে সরাসরি যোগাযোগ করতে পারেন।</p>
     <div class="contact">
-      <div class="card"><h3>ফেসবুক পেজ</h3><p>সহায়তা, নবায়ন ও প্রশ্নের জন্য</p><a href="https://facebook.com/cuetmwa" target="_blank" rel="noopener">facebook.com/cuetmwa</a></div>
-      <div class="card"><h3>ফেসবুক গ্রুপ</h3><p>আলোচনার জন্য গ্রুপ যথারীতি থাকছে</p><a href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">facebook.com/groups/cuetmwa</a></div>
-      <div class="card"><h3>ওয়েবসাইট</h3><p>সমিতির অফিসিয়াল ওয়েবসাইট</p><a href="https://cuetmwa.org" target="_blank" rel="noopener">cuetmwa.org</a></div>
       <div class="card"><h3>কার্যালয়</h3><p>৪৮-৪৯ কাকরাইল, ঢাকা-১০০০</p><p>48-49 Kakrail, Dhaka-1000</p></div>
-      <div class="card"><h3>ফোন</h3><p>অফিসিয়াল যোগাযোগ</p><a href="tel:+8801780354476">+880 1780 354476</a></div>
+      <div class="card"><h3>অফিসিয়াল ফোন</h3><p>সদস্যপদ ও অনুদান বিষয়ে</p><a href="tel:+8801780354476">+880 1780 354476</a></div>
       <div class="card"><h3>ইমেইল</h3><p>চিঠিপত্র ও প্রশ্নের জন্য</p><a href="mailto:cuetmaf@gmail.com">cuetmaf@gmail.com</a></div>
+      <div class="card"><h3>ফেসবুক পেজ</h3><p>সহায়তা, নবায়ন ও প্রশ্নের জন্য</p><a href="https://facebook.com/cuetmwa" target="_blank" rel="noopener">facebook.com/cuetmwa</a></div>
+      <div class="card"><h3>ফেসবুক গ্রুপ</h3><p>আলোচনা ও খবর</p><a href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">facebook.com/groups/cuetmwa</a></div>
+      <div class="card"><h3>ওয়েবসাইট</h3><p>সমিতির অফিসিয়াল ওয়েবসাইট</p><a href="https://cuetmwa.org">cuetmwa.org</a></div>
     </div>
   </section>
   <section>
     <h2>জরুরি যোগাযোগ</h2>
     <div class="contact">
       <div class="card"><h3>প্রকৌ. মোঃ জসীম উদ্দিন</h3><a href="tel:+8801711145643">01711 145643</a></div>
-      <div class="card"><h3>প্রকৌ. অসীম কুমার ঘোষ</h3><a href="tel:+8801714178317">01714 178317</a></div>
+      <div class="card"><h3>অধ্যাপক জি এম সাদিকুল ইসলাম</h3><a href="tel:+8801713018513">01713 018513</a></div>
       <div class="card"><h3>প্রকৌ. মোঃ শামীম সরকার</h3><a href="tel:+8801722520786">01722 520786</a></div>
     </div>
   </section>
-
   <section>
-    <h2>কার্যনির্বাহী কমিটি</h2>
-    <div class="gallery">
-      <div class="ph"><span>ছবি: সভাপতি</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
-      <div class="ph"><span>ছবি: সাধারণ সম্পাদক</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
-      <div class="ph"><span>ছবি: কোষাধ্যক্ষ</span><span>নাম ও ব্যাচ যোগ করা হবে</span></div>
+    <h2>প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>
+    <div class="faq">
+      <details><summary>কারা সদস্য হতে পারেন?</summary><p>চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক ডিগ্রিধারী প্রাক্তন শিক্ষার্থী। শুধু কিছুকাল পড়েছেন কিন্তু স্নাতক হননি, এমন কেউ যোগ্য নন।</p></details>
+      <details><summary>কার চিকিৎসার জন্য অনুদান চাওয়া যায়?</summary><p>নিবন্ধিত সদস্য নিজের, অথবা বাবা-মা, স্বামী/স্ত্রী ও সন্তানের চিকিৎসার জন্য আবেদন করতে পারেন।</p></details>
+      <details><summary>অনুদানের আবেদনে কী কী লাগে?</summary><p>সদস্য নম্বর বা আজীবন সদস্য কার্ডের কপি, পরিবারের সদস্যের ক্ষেত্রে সম্পর্কের প্রমাণ, চিকিৎসকের সনদ এবং সম্ভাব্য মোট ব্যয়ের প্রাক্কলন।</p></details>
+      <details><summary>অনুদানের অঙ্ক কে ঠিক করে?</summary><p>নির্বাহী কমিটি আবেদন যাচাই করে অনুমোদন ও অঙ্ক ঠিক করে। একই ব্যক্তিকে দ্বিতীয়বার অনুদান দিতে কমিটির দুই-তৃতীয়াংশ সদস্যের অনুমোদন লাগে।</p></details>
+      <details><summary>সদস্য না হয়েও কি অনুদান দেওয়া যায়?</summary><p>হ্যাঁ। যে কেউ যে কোনো পরিমাণ অনুদান দিতে পারেন। <a href="#donate" data-go="donate">অনুদান দিন</a> পাতায় ব্যাংক ও বিকাশের তথ্য আছে।</p></details>
     </div>
   </section>
 </div>
 </main>
 
-<footer><div class="wrap"><b>WE for US</b><span>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি · নিবন্ধন নং DA:09571/18 · তথ্য: জুন ২০২৬ পর্যন্ত</span></div></footer>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span class="slogan"><img src="images/weforus.webp" alt="WE FOR US: Because community empowers" onerror="this.remove()"></span>
+      <p>চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি<br>CUET Medical Welfare Association<br>নিবন্ধন নং ঢ-০৯৫৭১, সমাজসেবা অধিদফতর</p>
+    </div>
+    <div class="foot-links">
+      <b>দ্রুত লিংক</b>
+      <a href="#about" data-go="about">আমাদের সম্পর্কে</a>
+      <a href="#help" data-go="help">সহায়তা</a>
+      <a href="#renew" data-go="renew">সদস্যপদ</a>
+      <a href="#donate" data-go="donate">অনুদান দিন</a>
+      <a href="#notice" data-go="notice">নোটিশ</a>
+    </div>
+    <div class="foot-links">
+      <b>যোগাযোগ</b>
+      <span>৪৮-৪৯ কাকরাইল, ঢাকা-১০০০</span>
+      <span>+880 1780 354476</span>
+      <span>cuetmaf@gmail.com</span>
+      <a href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">ফেসবুক গ্রুপ</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom"><span>#WEforUS · সকল চুয়েটিয়ানের জন্য, চুয়েটিয়ানদের অর্থায়নে গঠিত ও চুয়েটিয়ান দ্বারা পরিচালিত</span></div>
+</footer>
 
 <script>
 (function(){
@@ -753,7 +895,7 @@ window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
 
 /* ---------- charts ---------- */
 function vbars(id,data,max,fmt){
-  const el=$(id),lab=$(id+'L');
+  const el=$(id),lab=$(id+'L');if(!el)return;
   data.forEach(d=>{
     const b=document.createElement('div');b.className='vb';
     b.innerHTML='<em>'+fmt(d.v)+'</em><i class="'+(d.c||'')+'" style="height:'+(d.v/max*100*0.86)+'%"></i>';
@@ -770,7 +912,7 @@ vbars('perGrant',[['২০১৬–১৯',0.8],['২০২০–২৩',1.3],['
 vbars('per100',[['২০১৬–১৯<br>জমা ৬২.৯ · অনুদান ৩.২',5,'l'],['২০২০–২৩<br>জমা ১৭.৮ · অনুদান ৫.৪',30,'l'],['২০২৪–২৬*<br>জমা ৬.১ · অনুদান ১১.৮',193,'o']].map(a=>({l:a[0],v:a[1],c:a[2]})),193,v=>bn(v)+' টাকা');
 
 function hbars(id,data,max,color){
-  const el=$(id);
+  const el=$(id);if(!el)return;
   data.forEach(d=>{
     const r=document.createElement('div');r.className='hb';
     r.innerHTML='<span>'+d.l+'</span><span class="tr"><i style="width:'+Math.max(d.v/max*85,1)+'%;'+(d.c?'background:'+d.c:'')+'"></i><b>'+d.t+'</b></span>';
@@ -781,7 +923,7 @@ hbars('lastPaid',[['২০১৭',248],['২০১৮',63],['২০১৯',49],[
 hbars('growBars',[['৮৬৬ (আজ)',1.1,'var(--blue-soft)'],['২,০০০',2.5,'var(--blue)'],['৪,০০০ (লক্ষ্য)',5,'var(--orange)']].map(a=>({l:a[0],v:a[1],c:a[2],t:'~'+bn(a[1])+' লাখ'})),5);
 
 function donut(id,legend,data,total){
-  let acc=0;const stops=data.map(d=>{const a=acc/total*360;acc+=d.v;return d.c+' '+a+'deg '+(acc/total*360)+'deg'});
+  if(!$(id))return;let acc=0;const stops=data.map(d=>{const a=acc/total*360;acc+=d.v;return d.c+' '+a+'deg '+(acc/total*360)+'deg'});
   $(id).style.background='conic-gradient('+stops.join(',')+')';
   data.forEach(d=>{
     const r=document.createElement('div');r.className='lg';
@@ -876,6 +1018,13 @@ const POSTS=[
     const b=a.querySelector('.linkbtn'),tx=a.querySelector('.post-text');
     if(b)b.addEventListener('click',()=>{const c=tx.dataset.collapsed==='true';tx.dataset.collapsed=c?'false':'true';b.textContent=c?'সংক্ষেপে দেখুন':'পুরোটা পড়ুন';});
   });
+})();
+
+/* latest 3 posts on home */
+(function(){const src=$('postList'),dst=$('latestPosts');if(!src||!dst)return;
+  [...src.querySelectorAll('article.post')].slice(0,3).forEach(a=>{const c=a.cloneNode(true);dst.appendChild(c);
+    const b=c.querySelector('.linkbtn'),tx=c.querySelector('.post-text');
+    if(b)b.addEventListener('click',()=>{const k=tx.dataset.collapsed==='true';tx.dataset.collapsed=k?'false':'true';b.textContent=k?'সংক্ষেপে দেখুন':'পুরোটা পড়ুন';});});
 })();
 
 /* ---------- renew form ---------- */
