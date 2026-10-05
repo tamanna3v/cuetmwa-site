@@ -55,6 +55,7 @@ a{color:var(--blue)}
 .mast .en{color:var(--orange-soft);font-weight:600;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase}
 .mast .reg{color:var(--on-deep-muted);font-size:.85rem}
 
+#about{scroll-margin-top:130px}
 /* tabs */
 .tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--deep-2);border-left:8px solid var(--orange)}
 .tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
@@ -323,7 +324,6 @@ a.btn{text-decoration:none;display:inline-block}
   <nav class="tabs" aria-label="পাতার বিভাগ">
     <div class="wrap" role="tablist">
       <button class="tab" role="tab" id="t-home" data-tab="home" aria-controls="home">হোম</button>
-      <button class="tab" role="tab" id="t-about" data-tab="about" aria-controls="about">আমাদের সম্পর্কে</button>
       <button class="tab" role="tab" id="t-help" data-tab="help" aria-controls="help">সহায়তা</button>
       <button class="tab" role="tab" id="t-stats" data-tab="stats" aria-controls="stats">স্বচ্ছতা ও পরিসংখ্যান</button>
       <button class="tab" role="tab" id="t-renew" data-tab="renew" aria-controls="renew">সদস্যপদ</button>
@@ -369,42 +369,11 @@ a.btn{text-decoration:none;display:inline-block}
       <p>বাংলাদেশের অন্যতম প্রকৌশল শিক্ষা প্রতিষ্ঠান চুয়েট। এর সংখ্যাগরিষ্ঠ শিক্ষার্থী আসে মধ্যবিত্ত পরিবার থেকে, যারা সবুজ-শ্যামল এই ক্যাম্পাসে গড়ে তোলে আরও একটি পরিবার।</p>
       <p>মারাত্মক ব্যাধি বা দুর্ঘটনার ব্যয় নির্বাহে অনেক পরিবার হিমশিম খায়। আগে দেখা গেছে, চুয়েট পরিবারের বর্তমান ও সাবেক ছাত্ররা রাত-দিন খেটে অর্থের সংস্থান করেছে, কিন্তু স্বল্প সময়ে তা অত্যন্ত কঠিন ও অনিশ্চিত। সমিতির উদ্দেশ্য সমস্যা সৃষ্টির আগেই প্রস্তুত থাকা।</p>
       <p class="quote">আমরাই পারি এই তহবিলকে মহীরুহের রূপ দিতে। কে জানে, কাল হয়তো আমার বা আপনার পাশেই দাঁড়াবে এই তহবিল, পরম নির্ভরতা হয়ে।</p>
-      <p><a href="#about" data-go="about">আমাদের গল্প পড়ুন →</a></p>
     </div>
     <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:4/3" onerror="this.remove()">
   </section>
 
-  <section>
-    <div class="sec-head"><div><div class="eyebrow">সাম্প্রতিক সহায়তা</div><h2>সমিতি যাঁদের পাশে দাঁড়িয়েছে</h2></div><a href="#help" data-go="help">সব দেখুন →</a></div>
-    <div class="posts" id="latestPosts"></div>
-  </section>
-
-  <section class="video-sec">
-    <div class="video-grid">
-      <div style="display:grid;gap:12px;align-content:center">
-        <div class="eyebrow">ভিডিও</div>
-        <p class="lede">সমিতির কাজ ও আহ্বান নিয়ে একটি ছোট ভিডিও। চুয়েটিয়ান বন্ধুদের সাথে শেয়ার করুন, যাতে আরও মানুষ আজীবন সদস্য হয়ে বিপদাপন্ন চুয়েটিয়ানের পাশে দাঁড়ান।</p>
-        <p><a href="https://www.youtube.com/shorts/5aaKg6lhYKc" target="_blank" rel="noopener">YouTube-এ দেখুন →</a></p>
-      </div>
-      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/5aaKg6lhYKc" title="চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি: ভিডিও" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-    </div>
-  </section>
-
-  <section class="ctaband">
-    <div>
-      <h2>সদস্যের ১০%ও সাড়া দিলে তহবিল কোটির পথে এক ধাপ এগোয়</h2>
-      <p>৮৬৬ জন আজীবন সদস্য একজন করে নতুন সদস্য আনলেই সদস্য সংখ্যা প্রায় দ্বিগুণ হয়। আপনার ব্যাচের বন্ধুকে আজই আমন্ত্রণ জানান।</p>
-    </div>
-    <div class="banner-cta">
-      <a class="btn" href="#renew" data-go="renew">সদস্যপদের বিস্তারিত</a>
-      <a class="btn ghost-light" href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">ফেসবুক গ্রুপে যোগ দিন</a>
-    </div>
-  </section>
-</div>
-
-<!-- ============ ABOUT ============ -->
-<div class="panel" id="about" role="tabpanel" aria-labelledby="t-about" hidden>
-  <section class="story">
+  <section class="story" id="about">
     <div class="eyebrow">আমাদের গল্প</div>
     <h2>একটি বিকেলের স্বপ্ন থেকে সমিতি</h2>
     <div class="story-grid">
@@ -448,6 +417,33 @@ a.btn{text-decoration:none;display:inline-block}
     <div class="logo-about">
       <img src="images/logo.webp" alt="সমিতির লোগো" onerror="this.remove()">
       <p>একটি প্রসারিত হাতের প্রতিচ্ছবি চুয়েট পরিবারের সার্বিক নির্ভরতার প্রতীক। গিয়ারটি অফুরান প্রাণশক্তির আধার। উড্ডয়মান পাখিরা চুয়েটের বর্তমান ও সাবেক শিক্ষার্থী এবং তাঁদের পরিবার; কালো পাখি অসুস্থতা, সাদা পাখি সুস্থতার নির্দেশক। সামগ্রিকভাবে ছবিটি বলে, আমাদের প্রাণশক্তির স্পর্শে অসুস্থ চুয়েটিয়ান ও তাঁর পরিবার সুস্থ হয়ে আবার ডানা মেলছে। স্লোগান: <strong>#WEforUS</strong>।</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><div class="eyebrow">সাম্প্রতিক সহায়তা</div><h2>সমিতি যাঁদের পাশে দাঁড়িয়েছে</h2></div><a href="#help" data-go="help">সব দেখুন →</a></div>
+    <div class="posts" id="latestPosts"></div>
+  </section>
+
+  <section class="video-sec">
+    <div class="video-grid">
+      <div style="display:grid;gap:12px;align-content:center">
+        <div class="eyebrow">ভিডিও</div>
+        <p class="lede">সমিতির কাজ ও আহ্বান নিয়ে একটি ছোট ভিডিও। চুয়েটিয়ান বন্ধুদের সাথে শেয়ার করুন, যাতে আরও মানুষ আজীবন সদস্য হয়ে বিপদাপন্ন চুয়েটিয়ানের পাশে দাঁড়ান।</p>
+        <p><a href="https://www.youtube.com/shorts/5aaKg6lhYKc" target="_blank" rel="noopener">YouTube-এ দেখুন →</a></p>
+      </div>
+      <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/5aaKg6lhYKc" title="চুয়েট চিকিৎসা সহায়তা কল্যাণ সমিতি: ভিডিও" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+  </section>
+
+  <section class="ctaband">
+    <div>
+      <h2>সদস্যের ১০%ও সাড়া দিলে তহবিল কোটির পথে এক ধাপ এগোয়</h2>
+      <p>৮৬৬ জন আজীবন সদস্য একজন করে নতুন সদস্য আনলেই সদস্য সংখ্যা প্রায় দ্বিগুণ হয়। আপনার ব্যাচের বন্ধুকে আজই আমন্ত্রণ জানান।</p>
+    </div>
+    <div class="banner-cta">
+      <a class="btn" href="#renew" data-go="renew">সদস্যপদের বিস্তারিত</a>
+      <a class="btn ghost-light" href="https://facebook.com/groups/cuetmwa" target="_blank" rel="noopener">ফেসবুক গ্রুপে যোগ দিন</a>
     </div>
   </section>
 </div>
@@ -887,7 +883,10 @@ const $=id=>document.getElementById(id);
 /* ---------- tabs ---------- */
 const tabs=[...document.querySelectorAll('.tab')];
 function show(id,push){
+  let sub=null;
+  if($(id)&&!$(id).classList.contains('panel')){sub=$(id);id=(sub.closest('.panel')||{}).id||'home';}
   if(!$(id)||!$(id).classList.contains('panel'))id='home';
+  if(sub)setTimeout(()=>sub.scrollIntoView({behavior:'smooth',block:'start'}),30);
   tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false'));
   document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==id);
   if(push){try{history.replaceState(null,'','#'+id)}catch(e){location.hash=id}}
