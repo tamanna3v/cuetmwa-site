@@ -85,7 +85,8 @@ section{display:grid;gap:16px;min-width:0}
 .hero .ph{aspect-ratio:4/3}
 .hero-solo{grid-template-columns:1fr}
 .hero-solo .lede{max-width:none}
-@media (min-width:900px){.oneline{white-space:nowrap}.hero-solo .lede.oneline{font-size:clamp(.8rem,1.32vw,1.02rem)}}
+.hero-solo>div{min-width:0}
+@media (min-width:1280px){.oneline{white-space:nowrap}.hero-solo .lede.oneline{font-size:min(.94vw,.86rem)}}
 .quote{font-family:var(--display);font-weight:700;color:var(--orange-ink);font-size:1.25rem;line-height:1.45}
 
 /* stat tiles */
