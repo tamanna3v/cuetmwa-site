@@ -83,6 +83,9 @@ section{display:grid;gap:16px;min-width:0}
 .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
 .hero h2{font-size:clamp(1.9rem,4.6vw,3rem)}
 .hero .ph{aspect-ratio:4/3}
+.hero-solo{grid-template-columns:1fr}
+.hero-solo .lede{max-width:none}
+@media (min-width:900px){.oneline{white-space:nowrap}.hero-solo .lede.oneline{font-size:clamp(.8rem,1.32vw,1.02rem)}}
 .quote{font-family:var(--display);font-weight:700;color:var(--orange-ink);font-size:1.25rem;line-height:1.45}
 
 /* stat tiles */
@@ -605,16 +608,16 @@ a.btn{text-decoration:none;display:inline-block}
 
 <!-- ============ MEMBERSHIP ============ -->
 <div class="panel" id="renew" role="tabpanel" aria-labelledby="t-renew" hidden>
-  <section class="hero">
+  <section class="hero hero-solo">
     <div style="display:grid;gap:12px">
       <div class="eyebrow">সদস্যপদ</div>
-      <h2>সদস্য হোন, সুরক্ষা-বৃত্তে যুক্ত হোন</h2>
-      <p class="lede">চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থীরা সদস্য হতে পারেন। নির্ধারিত ফরম অনলাইনে বা হাতে পূরণ করে যে কোনো সময় আবেদন করা যায়।</p>
+      <h2 class="oneline">সদস্য হতে আবেদন করুন</h2>
+      <p class="lede oneline">চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থীরা সদস্য হতে পারেন। নির্ধারিত ফরম অনলাইনে বা হাতে পূরণ করে যে কোনো সময় আবেদন করা যায়।</p>
       <div class="banner-cta" style="margin-top:4px">
         <a class="btn" href="#renewForm">আবেদন ফর্ম পূরণ করুন</a>
       </div>
     </div>
-    <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:16/10" onerror="this.remove()">
+    <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:3/1" onerror="this.remove()">
   </section>
 
   <section>
