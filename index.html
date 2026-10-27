@@ -102,6 +102,14 @@ section{display:grid;gap:16px;min-width:0}
 .callout{background:var(--deep);color:var(--on-deep);border-radius:14px;padding:20px 22px;display:grid;gap:6px;align-content:start}
 .callout b.big{font-family:var(--display);font-size:2.6rem;color:var(--orange-soft);line-height:1}
 .callout p{color:var(--on-deep)} .callout small{color:var(--on-deep-muted)}
+.verify{display:grid;gap:10px}
+.verify-row{display:flex;gap:8px;flex-wrap:wrap}
+.verify-row input{flex:1 1 260px;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;padding:11px 14px;font:inherit}
+.verify-out{min-height:1.4em;font-weight:600;color:var(--ink)}
+.verify-out .vno{display:inline-block;font-size:1.35rem;letter-spacing:.04em;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 12px;margin:2px 6px 2px 0}
+.verify-out.miss{color:var(--orange-ink)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .soft{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -616,15 +624,31 @@ a.btn{text-decoration:none;display:inline-block}
       <p class="lede oneline">চুয়েটের বর্তমান শিক্ষার্থী, এবং চুয়েট, বিআইটি চট্টগ্রাম ও চট্টগ্রাম প্রকৌশল মহাবিদ্যালয় থেকে স্নাতক প্রাক্তন শিক্ষার্থীরা সদস্য হতে পারেন। নির্ধারিত ফরম অনলাইনে বা হাতে পূরণ করে যে কোনো সময় আবেদন করা যায়।</p>
       <div class="banner-cta" style="margin-top:4px">
         <a class="btn" href="#renewForm">আবেদন ফর্ম পূরণ করুন</a>
+        <a class="btn btn-ghost" href="#verify">সদস্য পদ যাচাই</a>
       </div>
     </div>
     <img class="photo" src="images/campus-gate.webp" alt="চুয়েটের প্রধান ফটক" style="aspect-ratio:3/1" onerror="this.remove()">
   </section>
 
+  <section id="verify">
+    <div class="soft verify">
+      <div class="eyebrow">সদস্য পদ যাচাই</div>
+      <h2>আপনার সদস্য নম্বর জেনে নিন</h2>
+      <p>সমিতির রেকর্ডে থাকা আপনার নাম, ফোন নম্বর বা ইমেইল ঠিকানা লিখুন। মিললে শুধু সদস্য নম্বরটি দেখানো হবে, অন্য কোনো তথ্য নয়।</p>
+      <form id="verifyForm" class="verify-row" autocomplete="off">
+        <label class="sr" for="verifyQ">নাম, ফোন নম্বর বা ইমেইল</label>
+        <input id="verifyQ" type="text" inputmode="text" placeholder="যেমন: 017XXXXXXXX, name@gmail.com বা ইংরেজিতে পূর্ণ নাম" required>
+        <button class="btn" type="submit">যাচাই করুন</button>
+      </form>
+      <div id="verifyOut" class="verify-out" role="status" aria-live="polite"></div>
+      <p class="note">নাম লিখতে হবে ইংরেজিতে, সমিতির রেকর্ডে যেভাবে আছে (Engr./Dr. ছাড়া চলবে)। না মিললে ফোন বা ইমেইল দিয়ে চেষ্টা করুন, অথবা cuetmaf@gmail.com বা <a href="https://facebook.com/cuetmwa" target="_blank" rel="noopener">ফেসবুক পেজে</a> যোগাযোগ করুন।</p>
+    </div>
+  </section>
+
   <section>
     <h2>সদস্যপদের ফি</h2>
     <div class="tbl"><table class="feetbl">
-      <thead><tr><th>সদস্যপদ</th><th class="r">বর্তমান শিক্ষার্থী</th><th class="r">প্রকৌশলী</th><th class="r">বিদেশে অবস্থানরত প্রকৌশলী</th></tr></thead>
+      <thead><tr><th>সদস্যপদ</th><th class="r">বর্তমান শিক্ষার্থী</th><th class="r">প্রকৌশলী/নগর পরিকল্পনাবিদ/স্থপতি</th><th class="r">বিদেশে অবস্থানরত প্রকৌশলী/নগর পরিকল্পনাবিদ/স্থপতি</th></tr></thead>
       <tbody>
         <tr><td>সদস্য (বার্ষিক)</td><td class="r">৳ ৫০০</td><td class="r">৳ ১,০০০</td><td class="r">২০ ইউএসডি</td></tr>
         <tr><td><strong>আজীবন সদস্য</strong></td><td class="r"><strong>৳ ৩,৫০০</strong></td><td class="r"><strong>৳ ১১,০০০</strong></td><td class="r"><strong>১৫০ ইউএসডি</strong></td></tr>
@@ -641,7 +665,7 @@ a.btn{text-decoration:none;display:inline-block}
       <h3>আবেদনে যা লাগবে</h3>
       <ul class="req">
         <li>ছবি ১ (এক) কপি, পাসপোর্ট সাইজ</li>
-        <li>প্রকৌশলীদের জন্য প্রকৌশল সনদপত্রের কপি, শিক্ষার্থীদের জন্য আইডি কার্ডের কপি</li>
+        <li>প্রকৌশলী/নগর পরিকল্পনাবিদ/স্থপতিদের জন্য স্নাতক সনদপত্রের কপি, শিক্ষার্থীদের জন্য আইডি কার্ডের কপি</li>
         <li>সদস্যভুক্তির আবেদন ফি, অথবা ফি জমার রশিদ</li>
       </ul>
     </div>
@@ -681,7 +705,7 @@ a.btn{text-decoration:none;display:inline-block}
     <div class="pay">
       <div class="card"><h3>মার্কেন্টাইল ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">114 212 122 935 237</strong></p><p>হিসাবের নাম: CUET Medical Welfare Association</p><p>শাখা: আইইবি, ঢাকা</p></div>
       <div class="card"><h3>সোনালী ব্যাংক লিমিটেড</h3><p>হিসাব নম্বর: <strong class="num">৩৪২০৯৭৭২</strong></p><p>হিসাবের নাম: চুয়েট চিকিৎসা সহায়তা তহবিল</p><p>শাখা: চুয়েট শাখা</p></div>
-      <div class="card"><h3>বিকাশ (পার্সোনাল)</h3><p>নম্বর: <strong class="num">01780354476</strong></p><p>রেফারেন্সে নাম বা সদস্য নম্বর লিখুন</p></div>
+      <div class="card"><h3>বিকাশ (পার্সোনাল নম্বর)</h3><p>নম্বর: <strong class="num">01780354476</strong></p><p><strong>এটি পার্সোনাল বিকাশ নম্বর, তাই এখানে "সেন্ড মানি" করুন</strong> (পেমেন্ট বা ক্যাশ আউট নয়)।</p><p>নম্বরটি সমিতির পক্ষে <strong>প্রকৌ. মোঃ শামীম সরকার</strong>-এর।</p><p>রেফারেন্সে নাম বা সদস্য নম্বর লিখুন</p></div>
     </div>
     <p class="note">বিদেশ থেকে ইউএস ডলার বা অন্য স্বীকৃত মুদ্রায় সমপরিমাণ অর্থ পাঠানো যায়। অনুদান দিয়ে সাধারণ সম্পাদক বা অফিসিয়াল নম্বরে জানালে তহবিলের হিসাবে যুক্ত করতে সুবিধা হয়। অনলাইন পেমেন্ট গেটওয়ে <span class="tbd">শীঘ্রই</span>।</p>
   </section>
@@ -884,7 +908,7 @@ const POSTS=[
    body:['সুপ্রিয় চুয়েটিয়ান, সমিতির সদ্য পাশ করা একজন আজীবন সদস্যকে তাঁর চিকিৎসা সহায়তার আবেদনের প্রেক্ষিতে, নির্বাহী কমিটির অনলাইন আলোচনা মোতাবেক ৫০,০০০ (পঞ্চাশ হাজার) টাকা অনুদান দেওয়া হয়েছে।',
          'আসুন, চুয়েটের শিক্ষকগণসহ সকল চুয়েটিয়ান সমিতির আজীবন সদস্য হই, সাধ্য অনুযায়ী বিপদাপন্ন চুয়েটিয়ানের পাশে থাকি।',
          '২০২০ (৫০তম) ব্যাচের শিক্ষার্থীরা জুলাই ২০২৬-এর শেষ দিন পর্যন্ত ৩,৫০০ টাকা জমা দিয়ে শিক্ষার্থী হিসেবে আজীবন সদস্য হতে পারতেন।',
-         'আজীবন সদস্য ফি: শিক্ষার্থী ৩,৫০০ টাকা, প্রকৌশলী ১১,০০০ টাকা। #WEforUS'],
+         'আজীবন সদস্য ফি: শিক্ষার্থী ৩,৫০০ টাকা, প্রকৌশলী/নগর পরিকল্পনাবিদ/স্থপতি ১১,০০০ টাকা। #WEforUS'],
    link:'https://www.facebook.com/groups/cuetmwa/posts/4419211378339260/'},
   {date:'২৩ মার্চ ২০২৬',tag:'চিকিৎসা সহায়তা',amount:'৳ ৫০,০০০',img:'সহায়তা সংক্রান্ত ছবি',
    title:'আজীবন সদস্যের শিশু সন্তানের চিকিৎসায় সহায়তা',
@@ -925,6 +949,35 @@ const POSTS=[
   [...src.querySelectorAll('article.post')].slice(0,3).forEach(a=>{const c=a.cloneNode(true);dst.appendChild(c);
     const b=c.querySelector('.linkbtn'),tx=c.querySelector('.post-text');
     if(b)b.addEventListener('click',()=>{const k=tx.dataset.collapsed==='true';tx.dataset.collapsed=k?'false':'true';b.textContent=k?'সংক্ষেপে দেখুন':'পুরোটা পড়ুন';});});
+})();
+
+/* ---------- member verification (hashed lookup, shows membership number only) ---------- */
+(function(){
+  const f=$('verifyForm');if(!f)return;
+  const out=$('verifyOut');let idx=null;
+  const SALT='cuetmwa-verify-v1|';
+  const normName=v=>v.toLowerCase().replace(/\b(engr|eng|dr|prof|arch|planner|md|mohammad|mohammed|muhammad|mohd|moh|engineer)\b\.?/g,' ').replace(/[^a-z]/g,'');
+  function keys(q){
+    q=q.trim();const k=[];
+    if(q.includes('@')){k.push('e:'+q.toLowerCase());return k;}
+    if(!/[a-z]/i.test(q)){const d=q.replace(/\D/g,'');if(d.length>=8){const m=d.match(/^(?:88)?0?(1[3-9]\d{8})$/);k.push('p:'+(m?m[1]:d));}return k;}
+    const n=normName(q);if(n.length>=4)k.push('n:'+n);
+    return k;
+  }
+  async function h(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(SALT+t));return [...new Uint8Array(b)].slice(0,8).map(x=>x.toString(16).padStart(2,'0')).join('')}
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();out.className='verify-out';out.textContent='খোঁজা হচ্ছে…';
+    try{
+      if(!idx){const r=await fetch('data/verify.json',{cache:'no-cache'});idx=await r.json();}
+      const ks=keys($('verifyQ').value);
+      if(!ks.length){out.className='verify-out miss';out.textContent='পূর্ণ নাম, ফোন নম্বর বা ইমেইল ঠিকানা লিখুন।';return;}
+      const found=new Set();
+      for(const k of ks){const v=idx[await h(k)];if(v)v.split(',').forEach(n=>found.add(n));}
+      if(!found.size){out.className='verify-out miss';out.textContent='রেকর্ডে মেলেনি। অন্য তথ্য দিয়ে চেষ্টা করুন, বা সমিতির সাথে যোগাযোগ করুন।';return;}
+      const list=[...found];
+      out.innerHTML=(list.length>1?'একাধিক সদস্য মিলেছে। নিজের নম্বর নিশ্চিত হতে ফোন বা ইমেইল দিয়ে খুঁজুন:<br>':'আপনার সদস্য নম্বর: ')+list.map(n=>'<span class="vno">'+n.replace(/[^0-9]/g,'')+'</span>').join('');
+    }catch(err){out.className='verify-out miss';out.textContent='এখন যাচাই করা যাচ্ছে না। কিছুক্ষণ পর আবার চেষ্টা করুন।';}
+  });
 })();
 
 /* ---------- member form iframe ---------- */
